@@ -1,0 +1,491 @@
+/* Importar base y estilos de formulario si es necesario */
+@import url('/styles/base.css'); /* **CAMBIAR a tu CSS base real si es diferente */
+/* Podrías importar los estilos de formulario de vender_auto.css si son reutilizables */
+/* @import url('/paginas/venta/vender_auto.css'); */
+
+:root {
+    --kavak-blue: #006ce4;
+    --kavak-blue-dark: #0056b8;
+    --kavak-blue-light: #e6f0fa; /* Azul muy claro para fondos activos */
+    --kavak-text-primary: #333333;
+    --kavak-text-secondary: #555555;
+    --kavak-border-light: #e0e0e0;
+    --kavak-border-focus: var(--kavak-blue);
+    --kavak-background-page: #232c38ff;
+    --kavak-background-content: #ffffff;
+    --kavak-error: #d93025;
+    --kavak-input-background: #ffffff;
+    --kavak-input-placeholder: #aaaaaa;
+    --sidebar-width: 240px; /* Ancho del sidebar */
+    --header-height: 80px; /* Altura estimada del header fijo */
+}
+
+body {
+    margin: 0;   
+    background-color: var(--kavak-background-page);
+    background-image: linear-gradient(to bottom, #232c38, #c2dad9);
+    min-height: 90vh; /* Asegura que el body ocupe toda la altura de la ventana */
+    color: var(--kavak-text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    padding-top: var(--header-height); /* Empujar TODO el contenido bajo el header fijo */
+}
+
+#header2 {
+    position: fixed; /* <-- MANTENER ESTE */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.329);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    /* text-align: center; /* No es necesario si usas flex para centrar .botones */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease; /* La transición sigue aquí */
+    /* opacity: 1; /* Valor por defecto, opcional */
+    z-index: 1000; /* Mantener z-index alto */
+    /* position: relative; /* <-- ¡ELIMINA ESTA LÍNEA! */
+    min-height: 90px; /* Mantener si es necesario */
+    display: flex; /* Mantener para layout interno */
+    align-items: center; /* Mantener para layout interno */
+    justify-content: center; /* Mantener para layout interno */
+}
+
+#logo {
+    position: absolute; /* Correcto, relativo al #header2 fijo */
+    right: 100px; /* Ajusta según necesites */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 75px;
+    width: auto;
+    max-width: 150px;
+}
+
+/* Estilo para los botones en general */
+.botones button {
+    position: relative; /* Para que el enlace absoluto se posicione respecto al botón */
+    background-color: #ffffff;
+    border: none;
+    padding: 0; /* Elimina el padding si lo hay, para evitar desplazamientos */
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 23px;
+    overflow: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    width: 200px;
+    height: 50px;
+    font-family: "Hubot Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings:
+      "wdth" 99.6;
+  }
+  
+  /* Posiciona el enlace para que cubra todo el botón */
+  .botones button a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: flex; /* Usa flex para centrar el contenido */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover sobre el botón */
+  .botones button:hover {
+    background-color: rgba(253, 224, 97, 0.856);
+  }
+  
+  .botones button:hover a {
+    color: rgb(0, 0, 0);
+    transform: scale(1.4); 
+  }
+
+/* Wrapper principal */
+.account-page-wrapper {
+    /* No necesita padding-top si el body ya lo tiene */
+}
+
+/* Contenedor de dos columnas */
+.account-container {
+    display: flex;
+    gap: 2rem; /* Espacio entre sidebar y contenido */
+    padding-top: 2rem; /* Espacio bajo el header */
+    padding-bottom: 3rem; /* Espacio sobre el footer */
+    align-items: flex-start; /* Alinear items al inicio */
+    margin-top: 80px;
+}
+
+/* Sidebar */
+.account-sidebar {
+    flex: 0 0 var(--sidebar-width); /* Ancho fijo */
+    background-color: var(--kavak-background-content);
+    padding: 1.5rem 0; /* Padding vertical, sin padding horizontal (se aplica a links) */
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Para que se quede fijo si el contenido es largo */
+    position: sticky;
+    top: calc(var(--header-height) + 2rem); /* Posición bajo el header + padding */
+    max-height: calc(100vh - var(--header-height) - 4rem); /* Evitar que sea más alto que la ventana */
+    overflow-y: auto; /* Scroll si es necesario */
+}
+
+.account-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.account-nav li {
+    margin-bottom: 0.2rem; /* Pequeño espacio entre links */
+}
+
+.account-nav .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1.5rem; /* Padding interno del link */
+    color: var(--kavak-text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-left: 4px solid transparent; /* Borde izquierdo para estado activo */
+    transition: background-color 0.2s ease, color 0.2s ease, border-left-color 0.2s ease;
+}
+
+.account-nav .nav-link i {
+    margin-right: 0.8rem; /* Espacio icono-texto */
+    width: 20px; /* Ancho fijo para alinear iconos */
+    text-align: center;
+    color: #888888; /* Color gris para iconos */
+    transition: color 0.2s ease;
+}
+
+.account-nav .nav-link:hover {
+    background-color: var(--kavak-background-page); /* Fondo gris claro al pasar */
+    color: var(--kavak-text-primary);
+}
+.account-nav .nav-link:hover i {
+    color: var(--kavak-blue); /* Icono azul al pasar */
+}
+
+/* Estilo del link ACTIVO */
+.account-nav .nav-link.active {
+    background-color: var(--kavak-blue-light); /* Fondo azul claro */
+    color: var(--kavak-blue); /* Texto azul */
+    font-weight: 600; /* Más peso */
+    border-left-color: var(--kavak-blue); /* Borde azul */
+}
+.account-nav .nav-link.active i {
+    color: var(--kavak-blue); /* Icono azul */
+}
+
+/* Link de cerrar sesión (opcional: estilo diferente) */
+.account-nav .logout-link {
+    color: #c0392b; /* Rojo para logout */
+}
+.account-nav .logout-link:hover {
+    background-color: #fdeded; /* Fondo rojo muy claro */
+    color: #a03026;
+}
+.account-nav .logout-link i {
+    color: #c0392b;
+}
+.account-nav .logout-link:hover i {
+    color: #a03026;
+}
+
+
+/* Contenido Principal */
+.account-content {
+    flex: 1; /* Ocupa el espacio restante */
+    min-width: 0; /* Evitar overflow */
+    background-color: var(--kavak-background-content);
+    padding: 2rem 2.5rem; /* Padding interno */
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Secciones de Contenido */
+.account-section {
+    /* display: none; Por defecto ocultas (JS las muestra) */
+}
+.account-section.active-section {
+    display: block; /* Mostrar sección activa */
+    animation: fadeIn 0.5s ease; /* Animación suave */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.account-section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--kavak-text-primary);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--kavak-border-light);
+}
+
+.section-description {
+    font-size: 1rem;
+    color: var(--kavak-text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Estilos de Formularios (Reutilizar/Adaptar de vender_auto.css) */
+.profile-form .form-grid,
+.security-form .form-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por defecto */
+    gap: 1.5rem;
+}
+@media (min-width: 768px) {
+    .profile-form .form-grid,
+    .security-form .form-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    }
+}
+
+.form-group { margin-bottom: 1.5rem; } /* Espacio bajo cada grupo */
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--kavak-text-secondary);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    font-size: 1rem;
+    border: 1px solid var(--kavak-border-light);
+    border-radius: 8px; /* Ligeramente menos redondeado que vender */
+    background-color: var(--kavak-input-background);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color: var(--kavak-text-primary);
+}
+.form-group input:focus {
+    outline: none;
+    border-color: var(--kavak-border-focus);
+    box-shadow: 0 0 0 3px rgba(0, 108, 228, 0.15);
+}
+.form-group input[readonly] {
+    background-color: #f0f0f0;
+    cursor: default;
+    color: var(--kavak-text-secondary);
+    border-color: transparent; /* Sin borde si es readonly */
+}
+
+/* Botones de acción del formulario */
+.form-actions {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--kavak-border-light);
+    display: flex;
+    justify-content: flex-end; /* Alinear botones a la derecha */
+    gap: 1rem;
+}
+
+.edit-button, .save-button, .cta-button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    border: none;
+}
+
+.edit-button {
+    background-color: #f0f0f0;
+    color: var(--kavak-text-secondary);
+    border: 1px solid var(--kavak-border-light);
+}
+.edit-button:hover {
+    background-color: #e0e0e0;
+}
+
+.save-button, .cta-button {
+    background-color: var(--kavak-blue);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 108, 228, 0.2);
+}
+.save-button:hover, .cta-button:hover {
+    background-color: var(--kavak-blue-dark);
+    box-shadow: 0 4px 12px rgba(0, 108, 228, 0.3);
+}
+.save-button:active, .cta-button:active {
+     transform: scale(0.97);
+}
+
+/* Placeholder para contenido vacío */
+.placeholder-content {
+    text-align: center;
+    padding: 3rem 1rem;
+    border: 2px dashed var(--kavak-border-light);
+    border-radius: 12px;
+    background-color: var(--kavak-background-page);
+    margin-top: 1rem;
+}
+.placeholder-content i {
+    font-size: 2.5rem;
+    color: var(--kavak-text-secondary);
+    opacity: 0.5;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+.placeholder-content p {
+    color: var(--kavak-text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+.placeholder-content .cta-button {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* Estilos para Notificaciones (Checkboxes) */
+.notifications-form .form-group.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--kavak-border-light);
+}
+.notifications-form .form-group.checkbox-group:last-of-type {
+    border-bottom: none;
+}
+
+.notifications-form .form-group input[type="checkbox"] {
+    width: 1.2em;
+    height: 1.2em;
+    accent-color: var(--kavak-blue);
+    cursor: pointer;
+    margin: 0; /* Reset margin */
+}
+.notifications-form .form-group label {
+    margin: 0; /* Reset margin */
+    font-weight: normal;
+    font-size: 1rem;
+    color: var(--kavak-text-primary);
+    cursor: pointer;
+}
+
+/* Mensajes de error (reutilizar estilo) */
+.error-message {
+    color: var(--kavak-error);
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    min-height: 1em;
+    display: block;
+}
+.form-group input.invalid {
+    border-color: var(--kavak-error);
+}
+.form-group input.invalid:focus {
+     border-color: var(--kavak-error);
+     box-shadow: 0 0 0 3px rgba(217, 48, 37, 0.15);
+}
+
+#footer {
+    /* --- Propiedades para fijarlo abajo --- */
+    position: fixed;     /* Fija el footer a la ventana */
+    bottom: 0;           /* Pega el borde inferior del footer al borde inferior de la ventana */
+    left: 0;             /* Pega el borde izquierdo */
+    width: 100%;         /* Ocupa todo el ancho */
+    z-index: 990;        /* Orden de apilamiento (ej: debajo de header fijo si es 1000) */
+
+    /* --- Tus estilos visuales --- */
+    background-color: #242424;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 1.5rem 1rem; /* Define el padding interno */
+    text-align: center;
+    font-size: 0.9rem;
+
+    /* Es útil definir una altura explícita si puedes, para el cálculo del padding-bottom del body */
+    /* height: 75px; */ /* <-- EJEMPLO: Descomenta y ajusta si pones altura fija */
+
+    /* flex-shrink: 0; /* Ya no es necesario con position:fixed */
+}
+
+/* Estilos para el .container dentro del footer (si aplica) */
+#footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+/* Responsividad */
+@media (max-width: 992px) {
+    .account-container {
+        flex-direction: column; /* Apilar en pantallas medianas/pequeñas */
+        gap: 1.5rem;
+    }
+    .account-sidebar {
+        flex: 0 0 auto; /* Quitar ancho fijo */
+        width: 100%;
+        position: static; /* Quitar sticky */
+        max-height: none; /* Quitar altura máxima */
+        padding: 1rem 0;
+    }
+     .account-nav ul { /* Permitir scroll horizontal si no caben */
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 0.5rem; /* Espacio para scrollbar */
+        -ms-overflow-style: none;  /* IE y Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+     .account-nav ul::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
+
+     .account-nav li {
+        margin-bottom: 0; /* Sin margen inferior */
+        flex-shrink: 0; /* Evitar que se encojan */
+     }
+     .account-nav .nav-link {
+        padding: 0.8rem 1.2rem;
+        border-left: none; /* Quitar borde izquierdo */
+        border-bottom: 3px solid transparent; /* Usar borde inferior para activo */
+        border-radius: 6px 6px 0 0; /* Redondear arriba */
+        white-space: nowrap; /* Evitar que el texto se parta */
+     }
+     .account-nav .nav-link.active {
+         border-left-color: transparent; /* Asegurar que no haya borde izquierdo */
+         border-bottom-color: var(--kavak-blue); /* Borde inferior azul */
+         background-color: transparent; /* Sin fondo azul claro */
+     }
+    .account-content {
+        padding: 1.5rem;
+    }
+     .account-section h2 { font-size: 1.5rem; }
+}
+
+@media (max-width: 767px) {
+     body { padding-top: calc(var(--header-height) - 10px); } /* Ajustar padding si header es más pequeño */
+     .account-container { padding-top: 1rem;}
+     .account-sidebar { padding: 0.5rem 0; }
+     .account-nav .nav-link { padding: 0.7rem 1rem; font-size: 0.9rem;}
+     .account-content { padding: 1.5rem 1rem; }
+     .profile-form .form-grid,
+     .security-form .form-grid { grid-template-columns: 1fr; } /* Siempre 1 columna */
+     .form-actions { justify-content: center; flex-direction: column; gap: 0.8rem;}
+     .form-actions button { width: 100%; } /* Botones ancho completo */
+}

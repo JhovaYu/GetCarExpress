@@ -1,0 +1,402 @@
+/* Estilos Generales */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    line-height: 1.7; /* Ligeramente más espacio entre líneas */
+    background-color: #f8f9fa; /* Gris más claro y brillante */
+    color: #343a40; /* Gris oscuro para texto */
+    font-size: 16px; /* Base font size */
+}
+
+#header2 {
+    position: fixed; /* <-- MANTENER ESTE */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.329);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    /* text-align: center; /* No es necesario si usas flex para centrar .botones */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease; /* La transición sigue aquí */
+    /* opacity: 1; /* Valor por defecto, opcional */
+    z-index: 1000; /* Mantener z-index alto */
+    /* position: relative; /* <-- ¡ELIMINA ESTA LÍNEA! */
+    min-height: 90px; /* Mantener si es necesario */
+    display: flex; /* Mantener para layout interno */
+    align-items: center; /* Mantener para layout interno */
+    justify-content: center; /* Mantener para layout interno */
+}
+
+#logo {
+    position: absolute; /* Correcto, relativo al #header2 fijo */
+    right: 100px; /* Ajusta según necesites */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 75px;
+    width: auto;
+    max-width: 150px;
+}
+
+/* Estilo para los botones en general */
+.botones button {
+    position: relative; /* Para que el enlace absoluto se posicione respecto al botón */
+    background-color: #ffffff;
+    border: none;
+    padding: 0; /* Elimina el padding si lo hay, para evitar desplazamientos */
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 23px;
+    overflow: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    width: 200px;
+    height: 50px;
+    font-family: "Hubot Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings:
+      "wdth" 99.6;
+  }
+  
+  /* Posiciona el enlace para que cubra todo el botón */
+  .botones button a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: flex; /* Usa flex para centrar el contenido */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover sobre el botón */
+  .botones button:hover {
+    background-color: rgba(253, 224, 97, 0.856);
+  }
+  
+  .botones button:hover a {
+    color: rgb(0, 0, 0);
+    transform: scale(1.4); 
+  }
+
+/* Contenedor principal para centrar contenido */
+.container {
+    max-width: 1140px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrado automático */
+    padding: 0 1.5rem; /* Espacio a los lados */
+}
+
+/* Estilos del Hero Header */
+.hero {
+    background-color: #242424; /* Mantenido color oscuro */
+    color: white;
+    text-align: center;
+    padding: 5rem 1.5rem; /* Más padding vertical */
+}
+
+.hero-content h1 {
+    font-size: 2.8rem; /* Tamaño ajustado */
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px; /* Ancho máximo del párrafo */
+    margin: 0 auto;
+    opacity: 0.9; /* Ligera transparencia */
+}
+
+/* Estilos Secciones Sobre Nosotros (Misión/Visión) */
+.about-section {
+    padding: 4rem 0; /* Más padding vertical */
+    background-color: white; /* Fondo blanco para destacar */
+    margin-bottom: 2rem; /* Espacio entre secciones */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+/* Se añade el contenedor interno para aplicar el flex */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem; /* Espacio entre texto e imagen */
+}
+
+/* Clase para invertir el orden en la sección Visión */
+.about-section.reverse .about-container {
+    flex-direction: row-reverse;
+}
+
+.about-content {
+    flex: 1; /* Ocupa el espacio disponible */
+}
+
+.about-content h2 {
+    font-size: 2.2rem; /* Tamaño ajustado */
+    margin-bottom: 1.5rem;
+    color: #212529;
+    font-weight: 600;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+}
+
+.about-image {
+    flex: 1; /* Ocupa el espacio disponible */
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto; /* Altura automática para mantener proporción */
+    max-height: 400px; /* Altura máxima */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Evita deformación de la imagen */
+    display: block; /* Elimina espacio extra bajo la imagen */
+    margin: 0 auto; /* Centrar si el flex container es más grande */
+}
+
+/* Estilos Testimonios */
+.testimonials {
+    text-align: center;
+    padding: 4rem 0; /* Más padding vertical */
+    background-color: #ffffff; /* Fondo blanco */
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.testimonials h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem; /* Más espacio antes del carrusel */
+    color: #212529;
+    font-weight: 600;
+}
+
+.carousel-wrapper {
+    max-width: 700px; /* Ancho máximo del carrusel */
+    margin: 0 auto; /* Centrado */
+    position: relative; /* Para posicionar botones */
+}
+
+.carousel {
+    display: flex;
+    overflow-x: hidden; /* Oculta el scrollbar horizontal */
+    scroll-snap-type: x mandatory; /* Ajusta el scroll a cada tarjeta */
+    scroll-behavior: smooth; /* Animación suave al hacer scroll con JS */
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    margin-bottom: 1.5rem; /* Espacio antes de los controles */
+}
+
+.testimonial-card {
+    flex: 0 0 100%; /* Cada tarjeta ocupa el 100% del ancho del carrusel */
+    scroll-snap-align: center; /* Centra la tarjeta al hacer scroll */
+    max-width: 100%;
+    text-align: center;
+    padding: 2rem 1.5rem; /* Padding interno de la tarjeta */
+    box-sizing: border-box; /* Incluye padding en el ancho/alto */
+}
+
+.testimonial-photo {
+    width: 90px;  /* Ligeramente más grande */
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #dee2e6; /* Borde gris claro */
+    margin-bottom: 1.5rem;
+    object-fit: cover; /* Evita deformación */
+}
+
+.testimonial-text {
+    font-size: 1.15rem; /* Un poco más grande */
+    margin-bottom: 1rem;
+    color: #495057; /* Gris un poco más oscuro para contraste */
+    font-style: italic;
+}
+
+.testimonial-name {
+    font-weight: 600; /* Más peso */
+    color: #343a40;
+    margin-top: 1rem;
+}
+
+/* Controles del Carrusel */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Espacio entre botones */
+}
+
+.carousel-controls button {
+    background-color: #343a40; /* Botones oscuros */
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem; /* Padding ajustado */
+    border-radius: 50px; /* Botones redondeados */
+    cursor: pointer;
+    font-size: 1.3rem;
+    line-height: 1;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.carousel-controls button:hover {
+    background-color: #495057; /* Color al pasar el ratón */
+}
+
+.carousel-controls button:active {
+    transform: scale(0.95); /* Efecto al hacer clic */
+}
+
+/* ****** NUEVOS ESTILOS: UBICACIÓN ****** */
+.location-section {
+    padding: 4rem 0;
+    background-color: #ffffff; /* Fondo blanco */
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.location-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #212529;
+    font-weight: 600;
+}
+
+.location-address {
+    font-size: 1.1rem;
+    color: #495057;
+    margin-bottom: 2rem;
+}
+
+.map-container {
+    max-width: 900px; /* Ancho máximo del mapa */
+    margin: 0 auto; /* Centrar el contenedor del mapa */
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que el iframe respete el borde redondeado */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    display: block; /* Elimina espacio extra bajo el iframe */
+    width: 100%; /* Asegura que ocupe todo el contenedor */
+}
+/* ****** FIN NUEVOS ESTILOS: UBICACIÓN ****** */
+
+/* ****** NUEVOS ESTILOS: COLABORADORES ****** */
+.collaborators-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa; /* Fondo gris claro como el body */
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.collaborators-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    color: #212529;
+    font-weight: 600;
+}
+
+.collaborators-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 2rem; /* Espacio entre colaboradores */
+}
+
+.collaborator-item {
+    text-align: center;
+    flex-basis: 150px; /* Ancho base para cada colaborador */
+    max-width: 180px; /* Ancho máximo */
+}
+
+.collaborator-photo {
+    width: 120px; /* Tamaño de la foto */
+    height: 120px;
+    border-radius: 50%; /* Fotos circulares */
+    object-fit: cover; /* Evita deformación */
+    margin-bottom: 1rem; /* Espacio bajo la foto */
+    border: 3px solid #dee2e6; /* Borde sutil */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.collaborator-name {
+    font-weight: 600;
+    color: #343a40;
+    font-size: 1.1rem;
+}
+/* ****** FIN NUEVOS ESTILOS: COLABORADORES ****** */
+
+
+/* Estilos del Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1.5rem; /* Padding ajustado */
+    background: #242424; /* Mantenido color oscuro */
+    color: rgba(255, 255, 255, 0.7); /* Texto blanco con opacidad */
+    margin-top: 3rem; /* Más espacio antes del footer */
+    font-size: 0.9rem;
+}
+
+/* Media Queries para Responsividad (Ejemplo Básico) */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .about-container {
+        flex-direction: column !important; /* Apila contenido e imagen en móviles */
+        text-align: center;
+    }
+    .about-content h2, .testimonials h2, .location-section h2, .collaborators-section h2 {
+        font-size: 1.8rem; /* Títulos más pequeños en móvil */
+    }
+    .about-content p, .testimonial-text, .location-address {
+        font-size: 1rem; /* Textos más pequeños en móvil */
+    }
+    .about-image img {
+        max-height: 300px; /* Ajusta altura máxima en móviles */
+    }
+    .testimonial-card {
+        padding: 1.5rem 1rem;
+    }
+    .map-container iframe {
+        height: 350px; /* Altura menor del mapa en móvil */
+    }
+    .collaborator-photo {
+        width: 100px; /* Fotos de colaboradores más pequeñas */
+        height: 100px;
+    }
+    .collaborator-name {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .collaborators-grid {
+        gap: 1.5rem; /* Menos espacio entre colaboradores en pantallas muy pequeñas */
+    }
+     .collaborator-item {
+        flex-basis: 100px; /* Ancho base menor */
+        max-width: 120px; /* Ancho máximo menor */
+    }
+    .collaborator-photo {
+        width: 80px;
+        height: 80px;
+    }
+}

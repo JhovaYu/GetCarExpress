@@ -5,6 +5,7 @@ body, html {
     font-family: Arial, sans-serif;
     height: 100%;
     background-image: url('/src/imagen_de_ejemplo.jpg');  /* Agregar la imagen de fondo */
+   
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -12,6 +13,8 @@ body, html {
   
 /* Título inicial que cubre toda la pantalla */
 /* Título inicial que cubre toda la pantalla */
+
+
 #title {
     position: absolute;
     top: 50%;
@@ -94,19 +97,21 @@ body, html {
   
 /* Contenido inicial oculto */
 #content {
+    
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease;
-    padding: 100px;
+    padding: 50px;
     background-color: rgba(233, 233, 233, 0.808); /* Fondo con un poco de transparencia */
     z-index: 0;
-    font-size: 1.1rem; /* Tamaño de fuente */
+    font-size: 1.4rem; /* Tamaño de fuente */
     line-height: 1.6; /* Espaciado entre líneas */
+    text-align: center;
     /* Nuevo estilo para el ancho máximo y justificación */
     max-width: 1500px; /* Establecer el ancho máximo a 1000px */
     margin-left: auto;  /* Centrar el contenido a la izquierda */
     margin-right: auto; /* Centrar el contenido a la derecha */
-    text-align: justify; /* Justificar el texto */
+   
     backdrop-filter: blur(14px); /* Aplica un desenfoque al fondo */
     -webkit-backdrop-filter: blur(14px); /* Para soporte en Safari */
     border-radius: 20px; /* Bordes redondeados */
@@ -150,8 +155,8 @@ body, html {
   max-width: 1500px; /* Establecer el ancho máximo */
   margin-left: auto;
   margin-right: auto; /* Centrado */
-  text-align: justify; /* Justificar el texto */
-  font-size: 1.1rem; /* Tamaño de fuente */
+  text-align: center; /* Justificar el texto */
+  font-size: 1.4rem; /* Tamaño de fuente */
   line-height: 1.6; /* Espaciado entre líneas */
   backdrop-filter: blur(14px); /* Aplica un desenfoque al fondo */
   -webkit-backdrop-filter: blur(14px); /* Para soporte en Safari */
