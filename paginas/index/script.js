@@ -17,7 +17,7 @@ window.addEventListener('scroll', function() {
     header.style.display = 'block'; // Aseguramos que el header se muestre
     header.style.opacity = '1'; // Hacerlo visible
     header.style.transform = 'translateY(0)'; // Deslizar desde arriba
-    header2.style.transform = 'translateY(-1080%)';
+    header2.style.transform = 'translateY(-1000%)';
     header2.style.padding = '8px';
 
     // Animar el contenido
