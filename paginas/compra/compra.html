@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra tu Auto - GetCarXpress</title>
+    <link rel="stylesheet" href="compra.css"> </head>
+<body>
+
+    <div id="header2">
+        <div class="botones"> 
+            <button id="boton1"><a href="../compra/compra.html">Compra</a></button>
+            <button id="boton2"><a href="../venta/venta.html">Venta</a></button>
+            <button id="boton3"><a href="../user/user.html">Mi usuario</a></button>
+            <button id="boton3"><a href="../quienes_somos/quienes_somos.html">¿Quiénes somos?</a></button>
+            <button id="boton5"><a href="../organizaciones/orgnizaciones.html">Organización</a></button>
+            <a href="../../index.html"><img id="logo" src="../../src/logo_getCarMini.png" alt="Logo de GetCarXpress" class="logo"></a>
+        </div>
+    </div>
+
+    <header class="hero simple-hero"> <div class="hero-content container">
+            <h1>Encuentra tu Próximo Auto</h1>
+            <p>Explora nuestro inventario de autos seminuevos de calidad.</p>
+        </div>
+    </header>
+
+    <div class="listing-page-container container">
+
+        <aside class="filters-sidebar">
+            <h3>Filtros</h3>
+
+            <div class="filter-group">
+                <h4>Rango de Precio</h4>
+                <div class="price-range-placeholder">
+                    <input type="number" placeholder="Mínimo" aria-label="Precio mínimo">
+                    <span>-</span>
+                    <input type="number" placeholder="Máximo" aria-label="Precio máximo">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Marca</h4>
+                <div class="filter-options">
+                    <label><input type="checkbox" name="marca" value="toyota"> Toyota</label>
+                    <label><input type="checkbox" name="marca" value="nissan"> Nissan</label>
+                    <label><input type="checkbox" name="marca" value="honda"> Honda</label>
+                    <label><input type="checkbox" name="marca" value="vw"> Volkswagen</label>
+                    <label><input type="checkbox" name="marca" value="chevrolet"> Chevrolet</label>
+                    <a href="#" class="show-more">Ver más</a>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Año</h4>
+                 <div class="year-range-placeholder">
+                    <input type="number" min="2000" max="2025" placeholder="Desde" aria-label="Año desde">
+                    <span>-</span>
+                    <input type="number" min="2000" max="2025" placeholder="Hasta" aria-label="Año hasta">
+                </div>
+            </div>
+
+             <div class="filter-group">
+                <h4>Kilometraje</h4>
+                 <div class="mileage-range-placeholder">
+                     <select aria-label="Kilometraje máximo">
+                         <option value="">Cualquiera</option>
+                         <option value="20000">Hasta 20,000 km</option>
+                         <option value="40000">Hasta 40,000 km</option>
+                         <option value="60000">Hasta 60,000 km</option>
+                         <option value="80000">Hasta 80,000 km</option>
+                         <option value="100000">Hasta 100,000 km</option>
+                     </select>
+                 </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Tipo de Auto</h4>
+                <div class="filter-options">
+                    <label><input type="checkbox" name="tipo" value="sedan"> Sedán</label>
+                    <label><input type="checkbox" name="tipo" value="suv"> SUV</label>
+                    <label><input type="checkbox" name="tipo" value="hatchback"> Hatchback</label>
+                    <label><input type="checkbox" name="tipo" value="pickup"> Pick-up</label>
+                    </div>
+            </div>
+
+             <button class="apply-filters-button">Aplicar Filtros</button>
+             <button class="clear-filters-button">Limpiar Filtros</button>
+
+        </aside>
+
+        <main class="main-content">
+
+            <div class="sorting-bar">
+                <p><span id="results-count">128</span> autos encontrados</p>
+                <div class="sort-options">
+                    <label for="sort-select">Ordenar por:</label>
+                    <select id="sort-select" name="sort">
+                        <option value="relevant">Relevancia</option>
+                        <option value="price-asc">Precio (Menor a Mayor)</option>
+                        <option value="price-desc">Precio (Mayor a Menor)</option>
+                        <option value="year-desc">Año (Más Nuevos)</option>
+                        <option value="km-asc">Kilometraje (Menor a Mayor)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="car-grid">
+
+                <article class="car-card">
+                    <div class="car-image-container">
+                         <img src="../../src/toyota_cambry.jpg" alt="Toyota Camry 2021">
+                        </div>
+                    <div class="car-content">
+                        <h3>Toyota Camry 2021</h3>
+                        <p class="car-price">$450,000 <span class="financing">Enganche desde $90,000</span></p>
+                        <ul class="car-specs">
+                            <li><span class="spec-label">KM:</span> 35,000 km</li>
+                            <li><span class="spec-label">Trans:</span> Automática</li>
+                            </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card">
+                    <div class="car-image-container">
+                        <!-- esto es un comentario -->
+                        <img src="../../src/nissan_versa.jpeg" alt="Nissan Versa 2020">
+                        <!-- esto no hace nada, es solo para que se actulice esta cosa -->
+                    </div>
+                    <div class="car-content">
+                        <h3>Nissan Versa 2020</h3>
+                        <p class="car-price">$290,000 <span class="financing">Enganche desde $56,000</span></p>
+                        <ul class="car-specs">
+                             <li><span class="spec-label">KM:</span> 42,000 km</li>
+                            <li><span class="spec-label">Trans:</span> Manual</li>
+                        </ul>
+                         <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                 <article class="car-card">
+                    <div class="car-image-container">
+                        <img src="../../src/vm_jetta.jpg" alt="Volkswagen Jetta 2019">
+                    </div>
+                    <div class="car-content">
+                        <h3>Volkswagen Jetta 2019</h3>
+                        <p class="car-price">$310,000 <span class="financing">Enganche desde $62,000</span></p>
+                        <ul class="car-specs">
+                             <li><span class="spec-label">KM:</span> 55,000 km</li>
+                            <li><span class="spec-label">Trans:</span> Automática</li>
+                        </ul>
+                         <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                 <article class="car-card">
+                    <div class="car-image-container">
+                        <img src="../../src/crv.jpg" alt="Honda CR-V 2022">
+                    </div>
+                    <div class="car-content">
+                        <h3>Honda CR-V 2022</h3>
+                        <p class="car-price">$550,000 <span class="financing">Enganche desde $110,000</span></p>
+                        <ul class="car-specs">
+                             <li><span class="spec-label">KM:</span> 15,000 km</li>
+                            <li><span class="spec-label">Trans:</span> Automática</li>
+                        </ul>
+                         <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                 </div>
+
+            <nav class="pagination">
+                 <a href="#" class="page-link prev disabled">Anterior</a>
+                 <a href="#" class="page-link active">1</a>
+                 <a href="#" class="page-link">2</a>
+                 <a href="#" class="page-link">3</a>
+                 <span class="page-dots">...</span>
+                 <a href="#" class="page-link">10</a>
+                 <a href="#" class="page-link next">Siguiente</a>
+            </nav>
+
+        </main>
+
+    </div>
+
+    
+    <div id="carDetailModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="modal-content">
+            <button class="modal-close-btn" aria-label="Cerrar">&times;</button>
+            <div class="modal-body">
+                <div class="modal-main-info">
+                    <div class="modal-gallery">
+                        <img id="modalMainImage" src="../../src/toyota_cambry.jpg" alt="Imagen principal del auto" class="main-image">
+                        <div id="modalThumbnails" class="thumbnails">
+                            <img src="../../src/tucson.jpg" alt="Vista miniatura 1">
+                            <img src="../../src/vento_wm.jpg" alt="Vista miniatura 2">
+                            <img src="../../src/white_wm.png" alt="Vista miniatura 3">
+                            <img src="../../src/polo_wm.jpg" alt="Vista miniatura 4">
+                        </div>
+                    </div>
+                    <div class="modal-summary">
+                        <h2 id="modalTitle">Nissan Kicks Advance Aut 2020</h2>
+                        <p class="modal-price" id="modalPrice">$350,000 MXN</p>
+                        <p class="modal-location" id="modalLocation"><i class="fas fa-map-marker-alt"></i> Tuxtla Gutiérrez, Chiapas</p> <div class="modal-highlights">
+                            <h4>Destacado</h4>
+                            <ul>
+                                <li id="modalKm"><i class="fas fa-tachometer-alt"></i> 45,000 km</li>
+                                <li id="modalTransmision"><i class="fas fa-cogs"></i> Automática</li>
+                                <li id="modalColor"><i class="fas fa-palette"></i> Rojo</li>
+                                <li id="modalPuertas"><i class="fas fa-door-closed"></i> 5 Puertas</li>
+                                <li id="modalCombustible"><i class="fas fa-gas-pump"></i> Gasolina</li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-financing-info">
+                            <h4>Financiamiento</h4>
+                            <p>Consulta nuestros planes de financiamiento flexibles.</p>
+                            <button class="contact-button">Simular Crédito</button>
+                        </div>
+
+                         <button class="contact-button main-contact">Contactar al Vendedor</button>
+                    </div>
+                </div>
+
+                <div class="modal-details-section">
+                    <div class="modal-description">
+                        <h4>Descripción</h4>
+                        <p id="modalDescriptionText">
+                            Excelente Nissan Kicks versión Advance 2020. Transmisión automática, único dueño,
+                            factura original. Todos los servicios de agencia. Interiores bien cuidados,
+                            aire acondicionado funcionando al 100%. Llantas con más de media vida.
+                            ¡Listo para cualquier prueba!
+                        </p>
+                    </div>
+
+                    <div class="modal-detailed-specs">
+                        <h4>Especificaciones Técnicas</h4>
+                        <div class="spec-category">
+                            <h5>General</h5>
+                            <ul id="specsGeneral">
+                                <li>Año: 2020</li>
+                                <li>Marca: Nissan</li>
+                                <li>Modelo: Kicks</li>
+                                <li>Versión: Advance Aut</li>
+                                <li>Condición: Usado</li>
+                            </ul>
+                        </div>
+                         <div class="spec-category">
+                            <h5>Motor</h5>
+                            <ul id="specsMotor">
+                                <li>Cilindros: 4</li>
+                                <li>Cilindrada: 1.6 L</li>
+                                <li>Potencia: 118 hp</li>
+                                <li>Torque: 110 lb-pie</li>
+                            </ul>
+                        </div>
+                         <div class="spec-category">
+                            <h5>Equipamiento</h5>
+                            <ul id="specsEquipamiento">
+                                <li>Aire acondicionado</li>
+                                <li>Vidrios eléctricos</li>
+                                <li>Pantalla táctil</li>
+                                <li>Controles al volante</li>
+                                <li>Cámara de reversa</li>
+                                <li>Rines de aluminio</li>
+                            </ul>
+                        </div>
+                         <div class="spec-category">
+                            <h5>Seguridad</h5>
+                            <ul id="specsSeguridad">
+                                <li>Frenos ABS</li>
+                                <li>Bolsas de aire frontales</li>
+                                <li>Control de estabilidad (VDC)</li>
+                                <li>Asistente de arranque en pendientes</li>
+                            </ul>
+                        </div>
+                        </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+             <p>© <span id="current-year"></span> GetCarXpress. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="compra.js"></script>
+    <script>
+        // Script del año (ya existente)
+        const currentYearElement = document.getElementById('current-year');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>

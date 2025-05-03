@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - GetCarXpress</title>
+    <link rel="stylesheet" href="/styles/base.css"> <link rel="stylesheet" href="user.css">   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="header2">
+        <div class="botones">
+            <button id="boton1"><a href="../compra/compra.html">Compra</a></button>
+            <button id="boton2"><a href="../venta/venta.html">Venta</a></button>
+            <button id="boton3"><a href="../user/user.html">Mi usuario</a></button>
+            <button id="boton3"><a href="../quienes_somos/quienes_somos.html">¿Quiénes somos?</a></button>
+            <button id="boton5"><a href="../organizaciones/orgnizaciones.html">Organización</a></button>
+            <a href="../../index.html"><img id="logo" src="../../src/logo_getCarMini.png" alt="Logo de GetCarXpress" class="logo"></a>
+         </div>
+    </div>
+
+    <div class="account-page-wrapper"> <div class="account-container container">
+
+            <aside class="account-sidebar">
+                <div class="sidebar-header">
+                    </div>
+                <nav class="account-nav">
+                    <ul>
+                        <li>
+                            <a href="#datos-personales" class="nav-link active" data-target="datos-personales">
+                                <i class="fas fa-user fa-fw"></i>
+                                <span>Datos Personales</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#mis-compras" class="nav-link" data-target="mis-compras">
+                                <i class="fas fa-shopping-bag fa-fw"></i>
+                                <span>Mis Compras</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#mis-ventas" class="nav-link" data-target="mis-ventas">
+                                <i class="fas fa-dollar-sign fa-fw"></i>
+                                <span>Mis Ventas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#mis-favoritos" class="nav-link" data-target="mis-favoritos">
+                                <i class="fas fa-heart fa-fw"></i>
+                                <span>Mis Favoritos</span>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="#notificaciones" class="nav-link" data-target="notificaciones">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <span>Notificaciones</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#seguridad" class="nav-link" data-target="seguridad">
+                                <i class="fas fa-shield-alt fa-fw"></i>
+                                <span>Seguridad</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cerrar-sesion" class="nav-link logout-link" data-target="cerrar-sesion">
+                                <i class="fas fa-sign-out-alt fa-fw"></i>
+                                <span>Cerrar Sesión</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="account-content">
+                <div id="account-section-content">
+
+                    <section id="datos-personales" class="account-section active-section" role="region" aria-labelledby="datos-personales-heading">
+                        <h2 id="datos-personales-heading">Datos Personales</h2>
+                        <p class="section-description">Administra tu información de contacto y personal.</p>
+                        <form id="profileForm" class="profile-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="profileName">Nombre Completo</label>
+                                    <input type="text" id="profileName" name="profile_name" value="[Nombre Usuario Actual]" readonly>
+                                    <div class="error-message" aria-live="polite"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profileEmail">Correo Electrónico</label>
+                                    <input type="email" id="profileEmail" name="profile_email" value="[correo@ejemplo.com]" readonly>
+                                    <div class="error-message" aria-live="polite"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profilePhone">Teléfono</label>
+                                    <input type="tel" id="profilePhone" name="profile_phone" value="[961 123 4567]" readonly>
+                                    <div class="error-message" aria-live="polite"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="profileState">Estado</label>
+                                    <input type="text" id="profileState" name="profile_state" value="Chiapas" readonly>
+                                    <div class="error-message" aria-live="polite"></div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="edit-button">Editar Datos</button>
+                                <button type="submit" class="save-button" hidden>Guardar Cambios</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section id="mis-compras" class="account-section" role="region" aria-labelledby="mis-compras-heading" hidden>
+                        <h2 id="mis-compras-heading">Mis Compras</h2>
+                        <p class="section-description">Aquí verás los autos que has comprado con nosotros.</p>
+                        <div class="placeholder-content">
+                            <i class="fas fa-shopping-bag fa-3x"></i>
+                            <p>Aún no tienes compras registradas.</p>
+                            <a href="paginas/compra/compra.html" class="cta-button">Explorar Autos</a>
+                        </div>
+                         </section>
+
+                    <section id="mis-ventas" class="account-section" role="region" aria-labelledby="mis-ventas-heading" hidden>
+                         <h2 id="mis-ventas-heading">Mis Ventas</h2>
+                         <p class="section-description">Consulta el estado de los autos que estás vendiendo.</p>
+                         <div class="placeholder-content">
+                              <i class="fas fa-dollar-sign fa-3x"></i>
+                            <p>No tienes autos en proceso de venta.</p>
+                             <a href="paginas/venta/venta.html" class="cta-button">Vender mi Auto</a>
+                         </div>
+                         </section>
+
+                    <section id="mis-favoritos" class="account-section" role="region" aria-labelledby="mis-favoritos-heading" hidden>
+                         <h2 id="mis-favoritos-heading">Mis Favoritos</h2>
+                         <p class="section-description">Tus autos guardados para ver más tarde.</p>
+                         <div class="placeholder-content">
+                             <i class="fas fa-heart fa-3x"></i>
+                            <p>No has guardado ningún favorito.</p>
+                            <a href="paginas/compra/compra.html" class="cta-button">Buscar Autos</a>
+                         </div>
+                          </section>
+
+                    <section id="notificaciones" class="account-section" role="region" aria-labelledby="notificaciones-heading" hidden>
+                        <h2 id="notificaciones-heading">Notificaciones</h2>
+                        <p class="section-description">Elige cómo quieres recibir nuestras comunicaciones.</p>
+                        <form id="notificationsForm" class="notifications-form">
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="emailNotifications" name="email_notifications" checked>
+                                <label for="emailNotifications">Recibir promociones y novedades por correo electrónico.</label>
+                            </div>
+                             <div class="form-group checkbox-group">
+                                <input type="checkbox" id="smsNotifications" name="sms_notifications">
+                                <label for="smsNotifications">Recibir alertas importantes por SMS.</label>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="save-button">Guardar Preferencias</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section id="seguridad" class="account-section" role="region" aria-labelledby="seguridad-heading" hidden>
+                         <h2 id="seguridad-heading">Seguridad</h2>
+                         <p class="section-description">Administra la seguridad de tu cuenta.</p>
+                         <form id="securityForm" class="security-form">
+                             <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="currentPassword">Contraseña Actual</label>
+                                    <input type="password" id="currentPassword" name="current_password" required>
+                                     <div class="error-message" aria-live="polite"></div>
+                                </div>
+                                 <div class="form-group">
+                                    <label for="newPassword">Nueva Contraseña</label>
+                                    <input type="password" id="newPassword" name="new_password" required>
+                                     <div class="error-message" aria-live="polite"></div>
+                                </div>
+                                 <div class="form-group">
+                                    <label for="confirmPassword">Confirmar Nueva Contraseña</label>
+                                    <input type="password" id="confirmPassword" name="confirm_password" required>
+                                     <div class="error-message" aria-live="polite"></div>
+                                </div>
+                            </div>
+                             <div class="form-actions">
+                                 <button type="submit" class="save-button">Cambiar Contraseña</button>
+                             </div>
+                         </form>
+                    </section>
+
+                     <section id="cerrar-sesion" class="account-section" hidden>
+                          <h2>Cerrando sesión...</h2>
+                          </section>
+
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <footer id="footer"> <div class="container">
+              <p>© <span id="current-year-account"></span> GetCarXpress. Todos los derechos reservados.</p>
+         </div>
+     </footer>
+
+    <script src="user.js"></script>
+     <script>
+        // Script del año
+        const currentYearElementAccount = document.getElementById('current-year-account');
+        if (currentYearElementAccount) {
+            currentYearElementAccount.textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>

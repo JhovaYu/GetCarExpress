@@ -1,0 +1,247 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-image: url('../../src/imagen_de_ejemplo.jpg');  /* Agregar la imagen de fondo */
+   
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+/* Título inicial que cubre toda la pantalla */
+/* Título inicial que cubre toda la pantalla */
+
+
+#title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 2; /* Asegura que el título esté encima del contenido */
+    opacity: 1;
+    font-family: "Hubot Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 99.6;
+  
+    /* Fondo oscuro con bordes redondeados */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 20px 40px; /* Espaciado interno alrededor del texto */
+  
+    /* Efecto de desenfoque en el fondo */
+    backdrop-filter: blur(10px);  /* Aplica un desenfoque al fondo detrás del título */
+    -webkit-backdrop-filter: blur(10px);  /* Para soporte en Safari */
+  }
+  
+  
+  
+  #header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    display: none; /* Inicialmente oculta */
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-100%); /* Inicialmente fuera de la vista */
+    z-index: 1;
+  }
+  
+  #header-top-flex {
+    padding: 10px;
+    background-color: rgba(36, 36, 36, 0.822); /* Fondo blanco semi-transparente */
+    color: rgb(255, 255, 255);  /* Cambiar el color del texto a negro */
+    font-weight: bold; /* Poner el texto en negritas */
+    text-align: center;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    flex-direction: column; /* Para centrar el título y el párrafo verticalmente entre sí si es necesario */
+    font-family: "Hubot Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 99.6;
+    
+    /* Efecto de desenfoque blanco en el fondo */
+    backdrop-filter: blur(20px);  /* Aplica un desenfoque al fondo */
+    -webkit-backdrop-filter: blur(20px);  /* Para soporte en Safari */
+  }
+
+  #header-bottom-flex {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.329); /* Fondo blanco semi-transparente */
+    color: rgb(255, 255, 255); /* Cambiar el color del texto a blanco */
+    font-weight: bold; /* Poner el texto en negritas */
+    text-align: center;
+    backdrop-filter: blur(12px); /* Aplica un desenfoque al fondo */
+    -webkit-backdrop-filter: blur(12px); /* Para soporte en Safari */
+    display: flex;
+    justify-content: center; /* Centra la navegación horizontalmente */
+    align-items: center;
+  }
+
+  #header2 {
+    position: fixed;
+    bottom: 0; /* Coloca el header2 en la parte inferior */
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.651); /* Fondo blanco semi-transparente */
+    color: rgba(17, 17, 17, 0.923); /* Cambiar el color del texto a blanco */
+    font-weight: bold; /* Poner el texto en negritas */
+    text-align: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    opacity: 1;
+    z-index: 1;
+    /* Efecto de desenfoque blanco en el fondo */
+    backdrop-filter: blur(12px); /* Aplica un desenfoque al fondo */
+    -webkit-backdrop-filter: blur(12px); /* Para soporte en Safari */
+    z-index: 1000;    
+  }
+  
+  
+/* Contenido inicial oculto */
+#content {
+    
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+    padding: 50px;
+    background-color: rgba(233, 233, 233, 0.808); /* Fondo con un poco de transparencia */
+    z-index: 0;
+    font-size: 1.4rem; /* Tamaño de fuente */
+    line-height: 1.6; /* Espaciado entre líneas */
+    text-align: center;
+    /* Nuevo estilo para el ancho máximo y justificación */
+    max-width: 1500px; /* Establecer el ancho máximo a 1000px */
+    margin-left: auto;  /* Centrar el contenido a la izquierda */
+    margin-right: auto; /* Centrar el contenido a la derecha */
+   
+    backdrop-filter: blur(14px); /* Aplica un desenfoque al fondo */
+    -webkit-backdrop-filter: blur(14px); /* Para soporte en Safari */
+    border-radius: 20px; /* Bordes redondeados */
+  }
+  
+  /* Estilo para mostrar el contenido */
+  #content.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Espaciado para permitir scroll */
+  .spacer {
+    height: 50px; /* Ajusta según lo que necesites */
+  }
+  
+  .spacer2 {
+    height: 500px; /* Ajusta según lo que necesites */
+  }
+  
+  /* Contenedor para las tres imágenes */
+#image-container {
+    display: flex; /* Usamos Flexbox para dividir las imágenes en tres partes */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    height: 300px; /* Altura para las imágenes (puedes ajustarlo) */
+    justify-content: space-between; /* Distribuye las imágenes equitativamente */
+  }
+  
+  /* Cada imagen dentro del contenedor */
+  #image-container img {
+    width: 33.33%; /* Cada imagen ocupa un tercio del ancho de la pantalla */
+    height: 100%; /* Asegura que las imágenes tengan la misma altura */
+    object-fit: cover; /* Hace que la imagen se recorte si no tiene las proporciones correctas */
+  }
+  
+  /* Estilo para el bloque de texto adicional */
+#additional-content {
+  padding: 50px;
+  background-color: rgba(233, 233, 233, 0.808); /* Fondo blanco semi-transparente */
+  margin-top: 30px; /* Separación de la sección anterior */
+  max-width: 1500px; /* Establecer el ancho máximo */
+  margin-left: auto;
+  margin-right: auto; /* Centrado */
+  text-align: center; /* Justificar el texto */
+  font-size: 1.4rem; /* Tamaño de fuente */
+  line-height: 1.6; /* Espaciado entre líneas */
+  backdrop-filter: blur(14px); /* Aplica un desenfoque al fondo */
+  -webkit-backdrop-filter: blur(14px); /* Para soporte en Safari */
+  border-radius: 20px; /* Bordes redondeados */
+}
+
+/* Estilo para el encabezado dentro del bloque de texto adicional */
+#additional-content h2 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#content h2 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para los botones en general */
+.botones button {
+  position: relative; /* Para que el enlace absoluto se posicione respecto al botón */
+  background-color: #ffffff;
+  border: none;
+  padding: 0; /* Elimina el padding si lo hay, para evitar desplazamientos */
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 23px;
+  overflow: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  width: 200px;
+  height: 50px;
+  font-family: "Hubot Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 99.6;
+    z-index: 1003; 
+}
+
+/* Posiciona el enlace para que cubra todo el botón */
+.botones button a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  display: flex; /* Usa flex para centrar el contenido */
+  align-items: center; /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
+  transition: transform 0.3s ease;
+}
+
+/* Hover sobre el botón */
+.botones button:hover {
+  background-color: rgba(253, 224, 97, 0.856);
+}
+
+.botones button:hover a {
+  color: rgb(0, 0, 0);
+  transform: scale(1.4); 
+}

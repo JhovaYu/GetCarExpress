@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vende tu Auto - GetCarXpress</title>
+    <link rel="stylesheet" href="venta.css">   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="header2">
+        <div class="botones"> 
+            <button id="boton1"><a href="../compra/compra.html">Compra</a></button>
+            <button id="boton2"><a href="../venta/venta.html">Venta</a></button>
+            <button id="boton3"><a href="../user/user.html">Mi usuario</a></button>
+            <button id="boton3"><a href="../quienes_somos/quienes_somos.html">¿Quiénes somos?</a></button>
+            <button id="boton5"><a href="../organizaciones/orgnizaciones.html">Organización</a></button>
+            <a href="../../index.html"><img id="logo" src="../../src/logo_getCarMini.png" alt="Logo de GetCarXpress" class="logo"></a>
+        </div>
+      </div>
+
+    <header class="hero simple-hero">
+        <div class="hero-content container">
+            <h1>Vende tu auto fácil y rápido</h1>
+            <p>Completa los detalles de tu vehículo y recibe una oferta competitiva.</p>
+        </div>
+    </header>
+
+    <div class="sell-car-container container">
+        <form id="sellCarForm" class="sell-car-form" novalidate> <fieldset class="form-section">
+                <legend>Información Básica</legend>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="carYear">Año *</label>
+                        <select id="carYear" name="car_year" required>
+                            <option value="" disabled selected>Selecciona</option>
+                            </select>
+                        <div class="error-message" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="carMake">Marca *</label>
+                        <select id="carMake" name="car_make" required>
+                            <option value="" disabled selected>Selecciona</option>
+                            <option value="Nissan">Nissan</option>
+                             <option value="Chevrolet">Chevrolet</option>
+                             <option value="Volkswagen">Volkswagen</option>
+                             <option value="Toyota">Toyota</option>
+                             <option value="Honda">Honda</option>
+                             <option value="Kia">Kia</option>
+                             <option value="Mazda">Mazda</option>
+                             <option value="Ford">Ford</option>
+                        </select>
+                        <div class="error-message" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="carModel">Modelo *</label>
+                        <input type="text" id="carModel" name="car_model" placeholder="Ej: Versa, Jetta" required>
+                        <div class="error-message" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="carVersion">Versión *</label>
+                        <input type="text" id="carVersion" name="car_version" placeholder="Ej: Sense, Highline" required>
+                        <div class="error-message" aria-live="polite"></div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Detalles del Vehículo</legend>
+                <div class="form-grid columns-3">
+                     <div class="form-group">
+                        <label for="carMileage">Kilometraje *</label>
+                        <input type="text" inputmode="numeric" id="carMileage" name="car_mileage" placeholder="Ej: 45,000" required>
+                         <input type="hidden" id="carMileageRaw" name="car_mileage_raw"> <div class="error-message" aria-live="polite"></div>
+                    </div>
+                     <div class="form-group">
+                        <label for="carTransmission">Transmisión *</label>
+                        <select id="carTransmission" name="car_transmission" required>
+                             <option value="" disabled selected>Selecciona</option>
+                             <option value="Automatica">Automática</option>
+                             <option value="Manual">Manual</option>
+                             <option value="CVT">CVT</option>
+                             <option value="Automatizada">Automatizada</option>
+                        </select>
+                        <div class="error-message" aria-live="polite"></div>
+                    </div>
+                     <div class="form-group">
+                        <label for="carFuel">Combustible *</label>
+                        <select id="carFuel" name="car_fuel" required>
+                            <option value="" disabled selected>Selecciona</option>
+                            <option value="Gasolina">Gasolina</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Hibrido">Híbrido</option>
+                            <option value="Electrico">Eléctrico</option>
+                        </select>
+                         <div class="error-message" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="carColorExt">Color Exterior *</label>
+                        <input type="text" id="carColorExt" name="car_color_ext" placeholder="Ej: Rojo" required>
+                         <div class="error-message" aria-live="polite"></div>
+                    </div>
+                     <div class="form-group">
+                        <label for="carColorInt">Color Interior</label>
+                        <input type="text" id="carColorInt" name="car_color_int" placeholder="Ej: Negro">
+                         <div class="error-message" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="carDoors">Puertas *</label>
+                         <select id="carDoors" name="car_doors" required>
+                            <option value="" disabled selected>Selecciona</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                         <div class="error-message" aria-live="polite"></div>
+                    </div>
+                     <div class="form-group">
+                        <label for="carType">Tipo de Auto *</label>
+                        <select id="carType" name="car_type" required>
+                             <option value="" disabled selected>Selecciona</option>
+                             <option value="Sedan">Sedán</option>
+                             <option value="Hatchback">Hatchback</option>
+                             <option value="SUV">SUV</option>
+                             <option value="Crossover">Crossover</option>
+                             <option value="Pickup">Pick-up</option>
+                             <option value="Coupe">Coupé</option>
+                             <option value="Convertible">Convertible</option>
+                             <option value="Minivan">Minivan</option>
+                             <option value="Van">Van</option>
+                        </select>
+                         <div class="error-message" aria-live="polite"></div>
+                    </div>
+                </div>
+            </fieldset>
+
+             <fieldset class="form-section">
+                 <legend>Condición y Precio</legend>
+                 <div class="form-grid">
+                    <div class="form-group">
+                         <label for="carCondition">Condición</label>
+                         <input type="text" id="carCondition" name="car_condition_display" value="Usado" disabled readonly>
+                     </div>
+                    <div class="form-group">
+                        <label for="carPrice">Precio Deseado (MXN)</label>
+                        <div class="input-with-prefix">
+                            <span>$</span>
+                            <input type="text" inputmode="numeric" id="carPrice" name="car_price_display" placeholder="Ej: 150,000">
+                        </div>
+                        <input type="hidden" id="carPriceRaw" name="car_price_raw"> <small class="form-hint">Opcional. Déjalo en blanco si prefieres recibir nuestra mejor oferta.</small>
+                         <div class="error-message" aria-live="polite"></div>
+                    </div>
+                 </div>
+             </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Descripción Adicional</legend>
+                 <div class="form-group">
+                     <label for="carDescription">Describe tu auto (opcional)</label>
+                     <textarea id="carDescription" name="car_description" rows="5" placeholder="Añade detalles relevantes sobre tu vehículo..." maxlength="500"></textarea>
+                     <div class="char-counter-wrapper">
+                         <span id="charCounter">0</span> / 500 caracteres
+                     </div>
+                     <div class="error-message" aria-live="polite"></div>
+                 </div>
+            </fieldset>
+
+             <fieldset class="form-section">
+                 <legend>Fotos del Vehículo</legend>
+                 <div class="form-group">
+                     <label>Sube fotos claras (frente, atrás, lados, interior)</label>
+                     <label for="carPhotos" class="photo-upload-area" id="photoUploadLabel">
+                         <input type="file" id="carPhotos" name="car_photos[]" multiple accept="image/jpeg, image/png, image/webp">
+                         <div class="upload-content">
+                             <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                             <p>Arrastra tus fotos aquí o <strong>haz clic para seleccionar</strong></p>
+                             <small>JPG, PNG, WEBP. Máx 10 fotos, 5MB c/u.</small>
+                         </div>
+                     </label>
+                     <div id="photoPreview" class="photo-preview">
+                        </div>
+                     <div class="error-message" aria-live="polite"></div>
+                 </div>
+             </fieldset>
+
+            <fieldset class="form-section">
+                <legend>Información de Contacto</legend>
+                <p class="section-intro">Usaremos estos datos para enviarte la oferta por tu auto.</p>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="contactName">Nombre Completo *</label>
+                        <input type="text" id="contactName" name="contact_name" required placeholder="Tu nombre">
+                         <div class="error-message" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Correo Electrónico *</label>
+                        <input type="email" id="contactEmail" name="contact_email" required placeholder="tu.correo@ejemplo.com">
+                         <div class="error-message" aria-live="polite"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPhone">Teléfono *</label>
+                        <input type="tel" id="contactPhone" name="contact_phone" required placeholder="10 dígitos">
+                         <div class="error-message" aria-live="polite"></div>
+                    </div>
+                     <div class="form-group">
+                        <label for="contactState">Estado *</label>
+                        <select id="contactState" name="contact_state" required>
+                             <option value="" disabled>Selecciona</option>
+                             <option value="Chiapas" selected>Chiapas</option>
+                            </select>
+                         <div class="error-message" aria-live="polite"></div>
+                    </div>
+                </div>
+                 <div class="form-group terms-group">
+                    <input type="checkbox" id="termsAccepted" name="terms_accepted" required>
+                    <label for="termsAccepted">
+                        Acepto los <a href="/terminos-y-condiciones" target="_blank">Términos y Condiciones</a> y la <a href="/aviso-de-privacidad" target="_blank">Política de Privacidad</a>. *
+                    </label>
+                     <div class="error-message" aria-live="polite"></div>
+                 </div>
+            </fieldset>
+
+            <div class="submit-section">
+                <button type="submit" class="submit-button">
+                    <span class="button-text">Recibir Oferta</span>
+                    <span class="button-loader" hidden>Enviando...</span>
+                </button>
+                <p class="submit-note">Revisaremos los datos y te contactaremos pronto.</p>
+            </div>
+        </form>
+    </div>
+
+    <footer id="footer">
+        <div class="container">
+             <p>© <span id="current-year-sell"></span> GetCarXpress. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="venta.js"></script>
+     <script>
+        // Script del año (puede ir en vender_auto.js también)
+        const currentYearElementSell = document.getElementById('current-year-sell');
+        if (currentYearElementSell) {
+            currentYearElementSell.textContent = new Date().getFullYear();
+        }
+    </script>
+</body>
+</html>

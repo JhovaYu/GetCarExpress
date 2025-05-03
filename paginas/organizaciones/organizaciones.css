@@ -1,0 +1,223 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    background-color: #f8f9fa;
+    color: #343a40;
+    font-size: 16px;
+}
+
+#header2 {
+    position: fixed; /* <-- MANTENER ESTE */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.329);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    /* text-align: center; /* No es necesario si usas flex para centrar .botones */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease; /* La transición sigue aquí */
+    /* opacity: 1; /* Valor por defecto, opcional */
+    z-index: 1000; /* Mantener z-index alto */
+    /* position: relative; /* <-- ¡ELIMINA ESTA LÍNEA! */
+    min-height: 90px; /* Mantener si es necesario */
+    display: flex; /* Mantener para layout interno */
+    align-items: center; /* Mantener para layout interno */
+    justify-content: center; /* Mantener para layout interno */
+}
+
+#logo {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 75px;
+    width: auto;
+    max-width: 150px;
+}
+
+.botones button {
+    position: relative;
+    background-color: #ffffff;
+    border: none;
+    padding: 0;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px; /* Ajustado tamaño de fuente */
+    overflow: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    width: 220px; /* Ajustado ancho botón */
+    height: 50px;
+    font-family: "Hubot Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 99.6;
+}
+
+.botones button a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.botones button:hover {
+    background-color: rgba(253, 224, 97, 0.856);
+}
+
+.botones button:hover a {
+    color: rgb(0, 0, 0);
+    transform: scale(1.05); /* Reducido el efecto de escala */
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.hero {
+    background-color: #242424;
+    color: white;
+    text-align: center;
+    padding: 6rem 1.5rem;
+    margin-top: 90px; /* Para no quedar debajo del header fijo */
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.info-section {
+    padding: 4rem 0;
+    background-color: white;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.info-section.reverse .info-container {
+    flex-direction: row-reverse;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #212529;
+    font-weight: 600;
+}
+
+.info-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.info-content ul {
+    font-size: 1.1rem;
+    padding-left: 20px;
+}
+
+.info-content li {
+    margin-bottom: 0.5rem;
+}
+
+.info-image {
+    flex: 1;
+    text-align: center;
+}
+
+.info-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: #242424;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .info-container {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .info-image {
+        order: -1; /* Coloca la imagen encima del texto en móvil */
+        margin-bottom: 2rem;
+    }
+    .info-content h2 {
+        font-size: 1.8rem;
+    }
+    .info-content p, .info-content ul {
+        font-size: 1rem;
+    }
+    .botones button {
+        font-size: 18px;
+        width: 180px;
+    }
+    #logo {
+        right: 20px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .botones button {
+        font-size: 16px;
+        width: 150px;
+        margin: 3px;
+    }
+    #logo {
+        height: 50px;
+    }
+}

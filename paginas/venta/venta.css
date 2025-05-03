@@ -1,0 +1,584 @@
+/* Importar o incluir estilos base */
+@import url('quienes_somos.css'); /* Asume fuentes, resets básicos */
+
+/* Kavak-Inspired Variables & Base */
+:root {
+    --kavak-blue: #006ce4; /* Kavak's primary blue (adjust if needed) */
+    --kavak-blue-dark: #0056b8;
+    --kavak-text-primary: #0d0000;
+    --kavak-text-secondary: #555555;
+    --kavak-border-light: #e0e0e0;
+    --kavak-border-focus: var(--kavak-blue);
+    --kavak-background-page: #232c38ff; /* Very light grey page background */
+    --kavak-background-form: #ffffff;
+    --kavak-error: #d93025; /* Google's Material Design error red */
+    --kavak-input-background: #ffffff;
+    --kavak-input-placeholder: #aaaaaa;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #232c38, #c2dad9);
+    min-height: 100vh;
+    
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Modern stack */
+    line-height: 1.5;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#header2 {
+    position: fixed; /* <-- MANTENER ESTE */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.329);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    /* text-align: center; /* No es necesario si usas flex para centrar .botones */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease; /* La transición sigue aquí */
+    /* opacity: 1; /* Valor por defecto, opcional */
+    z-index: 1000; /* Mantener z-index alto */
+    /* position: relative; /* <-- ¡ELIMINA ESTA LÍNEA! */
+    min-height: 90px; /* Mantener si es necesario */
+    display: flex; /* Mantener para layout interno */
+    align-items: center; /* Mantener para layout interno */
+    justify-content: center; /* Mantener para layout interno */
+}
+
+#logo {
+    position: absolute; /* Correcto, relativo al #header2 fijo */
+    right: 100px; /* Ajusta según necesites */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 75px;
+    width: auto;
+    max-width: 150px;
+}
+
+/* Estilo para los botones en general */
+.botones button {
+    position: relative; /* Para que el enlace absoluto se posicione respecto al botón */
+    background-color: #ffffff;
+    border: none;
+    padding: 0; /* Elimina el padding si lo hay, para evitar desplazamientos */
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 23px;
+    overflow: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    width: 200px;
+    height: 50px;
+    font-family: "Hubot Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-variation-settings:
+      "wdth" 99.6;
+  }
+  
+  /* Posiciona el enlace para que cubra todo el botón */
+  .botones button a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: flex; /* Usa flex para centrar el contenido */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover sobre el botón */
+  .botones button:hover {
+    background-color: rgba(253, 224, 97, 0.856);
+  }
+  
+  .botones button:hover a {
+    color: rgb(0, 0, 0);
+    transform: scale(1.4); 
+  }
+
+/* Contenedor Principal - Centrado y más estrecho */
+.sell-car-container {
+    max-width: 880px; /* Más estrecho para enfoque */
+    margin: 3rem auto 4rem auto; /* Centrado, más espacio vertical */
+    padding: 0 1rem;
+}
+
+.sell-car-form {
+    background-color: var(--kavak-background-form);
+    padding: 2rem; /* Padding reducido para más aire externo */
+    border-radius: 16px; /* Más redondeado */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); /* Sombra sutil */
+    min-height: 95vh;
+    
+}
+
+.hero.simple-hero {
+
+    display: flex; /* Flexbox para centrar contenido */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    gap: 1rem; /* Espacio entre elementos */
+    text-align: center;
+    font-size: 1.5rem; /* Tamaño de fuente grande */
+    margin-top: 150px;
+}
+
+@media (min-width: 768px) {
+    .sell-car-form {
+        padding: 3rem 3.5rem; /* Más padding en pantallas grandes */
+    }
+}
+
+/* Secciones - Mayor separación visual */
+.form-section {
+    border: none;
+    padding: 0;
+    margin: 0 0 3rem 0; /* Mucho espacio entre "pasos" */
+}
+.form-section:last-of-type {
+    margin-bottom: 2rem; /* Menos espacio antes del botón final */
+}
+
+
+/* Título de Sección (Legend) - Más prominente */
+.form-section legend {
+    font-size: 1.5rem; /* Más grande */
+    font-weight: 600; /* Más peso */
+    color: var(--kavak-text-primary);
+    margin-bottom: 2rem; /* Espacio bajo el título */
+    padding: 0;
+    border-bottom: none; /* Sin línea bajo el título */
+    width: 100%;
+    text-align: left; /* Asegurar alineación */
+}
+
+.section-intro {
+    font-size: 0.95rem;
+    color: var(--kavak-text-secondary);
+    margin-bottom: 1.8rem; /* Más espacio */
+    line-height: 1.6;
+}
+
+/* Grid - Forzado a una columna */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Siempre una columna */
+    gap: 1.5rem; /* Espacio entre campos */
+}
+/* Ignorar modificadores de columnas */
+.form-grid.columns-3 {
+    grid-template-columns: 1fr;
+}
+
+/* Grupo Label + Input */
+.form-group {
+    margin-bottom: 0;
+    position: relative; /* Para posicionar errores absolutos si se desea */
+}
+
+/* Labels encima del input */
+.form-group label {
+    display: block;
+    font-weight: 500; /* Peso medio */
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--kavak-text-secondary); /* Texto secundario */
+    cursor: default; /* No cursor pointer por defecto */
+}
+.form-group label[for]:not(.terms-group label) {
+    cursor: pointer;
+}
+
+/* Asterisco - Más sutil */
+.form-group label:after {
+    content: " *";
+    color: var(--kavak-error); /* Rojo error */
+    font-weight: 500;
+    display: inline;
+    margin-left: 2px;
+}
+.form-group input[readonly] + label:after,
+.form-group label.optional:after,
+.form-group textarea + .char-counter-wrapper + .error-message + label:after,
+.form-group input[type="checkbox"] + label:after {
+    content: "";
+}
+
+/* Inputs, Selects, Textareas - Estilo Kavak Central */
+.form-group input[type="text"],
+.form-group input[type="number"], /* Aunque usamos text para formatear */
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 1.2rem; /* Padding generoso - CLAVE */
+    font-size: 1rem;
+    border: 1px solid var(--kavak-border-light); /* Borde muy sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: var(--kavak-input-background);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none; /* Quitar estilos por defecto */
+    line-height: 1.5;
+    color: var(--kavak-text-primary);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--kavak-input-placeholder);
+    opacity: 1;
+}
+
+/* Select con flecha Kavak (simple chevron) */
+.form-group select {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="%23555555"><path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06z" clip-rule="evenodd"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1.2rem center; /* Ajustar posición */
+    background-size: 16px 16px;
+    padding-right: 3.5rem; /* Más espacio para la flecha */
+}
+.form-group select:invalid {
+   color: var(--kavak-input-placeholder);
+}
+.form-group select option:not([disabled]) { /* Opciones normales */
+    color: var(--kavak-text-primary);
+}
+
+
+/* Estilo de Foco - Borde Azul */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--kavak-border-focus);
+    box-shadow: 0 0 0 3px rgba(0, 108, 228, 0.15); /* Sombra azul muy sutil */
+}
+
+.form-group input[readonly] {
+    background-color: #f0f0f0; /* Gris más claro */
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Input con prefijo (para precio $) - Adaptado */
+.input-with-prefix {
+    position: relative;
+}
+.input-with-prefix span {
+    position: absolute;
+    left: 1.2rem; /* Alinear con padding */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: var(--kavak-text-secondary);
+    pointer-events: none;
+}
+.input-with-prefix input {
+    padding-left: 2.8rem; /* Más padding para '$' */
+}
+
+/* Hint text */
+.form-hint {
+    display: block;
+    font-size: 0.85rem; /* Consistente */
+    color: var(--kavak-text-secondary);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Contador de caracteres */
+.char-counter-wrapper {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--kavak-text-secondary);
+    margin-top: 0.5rem;
+}
+
+/* Área de carga de fotos - Estilo botón grande */
+.photo-upload-area {
+    border: 1px solid var(--kavak-border-light); /* Borde sutil */
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: var(--kavak-background-white);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    display: block; /* Cambiar a bloque */
+}
+.photo-upload-area:hover {
+    border-color: var(--kavak-blue); /* Borde azul al pasar */
+    background-color: #f5fafe; /* Fondo azulado muy pálido */
+}
+.upload-content {
+     color: var(--kavak-text-secondary);
+     display: flex; /* Alinear icono y texto */
+     align-items: center;
+     justify-content: center;
+     gap: 0.8rem;
+}
+.upload-content .upload-icon {
+    font-size: 1.5rem; /* Icono más pequeño */
+    color: var(--kavak-blue);
+    margin: 0; /* Quitar margen */
+}
+.upload-content p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--kavak-text-primary);
+}
+.upload-content p strong {
+    color: var(--kavak-blue);
+    font-weight: 500; /* Menos bold */
+}
+.upload-content small {
+    font-size: 0.8rem;
+    display: block; /* En línea separada */
+    margin-top: 0.5rem;
+}
+
+/* Previsualización de fotos */
+.photo-preview {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem; /* Menos gap */
+}
+.photo-preview .img-preview-wrapper {
+    position: relative;
+    width: 80px; /* Más pequeño */
+    height: 60px;
+}
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--kavak-border-light);
+}
+.photo-preview .remove-img-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: var(--kavak-text-secondary);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+.photo-preview .remove-img-btn:hover {
+    opacity: 1;
+    background-color: var(--kavak-error);
+}
+
+/* Grupo de Términos */
+.terms-group {
+    margin-top: 1rem;
+    padding-top: 1rem; /* Añadir espacio arriba */
+}
+.terms-group label {
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: normal;
+    color: var(--kavak-text-secondary);
+    cursor: pointer;
+}
+.terms-group input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 1.2em;
+    height: 1.2em;
+    accent-color: var(--kavak-blue); /* Color azul */
+    cursor: pointer;
+    border: 1px solid var(--kavak-border-light); /* Añadir borde visible */
+    border-radius: 3px;
+    margin: 0; /* Resetear margen */
+    position: relative; /* Para pseudo-elementos si se personaliza más */
+    appearance: none; /* Quitar apariencia nativa */
+    background-color: white;
+    transition: background-color 0.2s ease;
+}
+.terms-group input[type="checkbox"]:checked {
+    background-color: var(--kavak-blue);
+    border-color: var(--kavak-blue);
+    /* Añadir checkmark con pseudo-elemento */
+}
+.terms-group input[type="checkbox"]:checked::before {
+    content: '✔'; /* O un SVG checkmark */
+    color: white;
+    font-size: 0.8em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+}
+
+.terms-group a {
+    color: var(--kavak-blue);
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 108, 228, 0.3);
+}
+.terms-group a:hover {
+    color: var(--kavak-blue-dark);
+}
+
+/* Mensajes de error */
+.error-message {
+    color: var(--kavak-error);
+    font-size: 0.8rem;
+    margin-top: 0.5rem; /* Más cerca del input */
+    min-height: 1em; /* Más compacto */
+    display: block;
+}
+/* Estilo inputs inválidos */
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+    border-color: var(--kavak-error);
+}
+.form-group input.invalid:focus,
+.form-group select.invalid:focus,
+.form-group textarea.invalid:focus {
+     border-color: var(--kavak-error); /* Mantener borde rojo en foco si hay error */
+     box-shadow: 0 0 0 3px rgba(217, 48, 37, 0.15); /* Sombra roja */
+}
+
+/* Botón de Envío - Estilo Kavak */
+.submit-section {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 0; /* Sin padding superior extra */
+    border-top: none; /* Sin línea divisoria */
+}
+
+.submit-button {
+    background-color: var(--kavak-blue); /* AZUL primario */
+    color: white;
+    padding: 1rem 2rem; /* Padding vertical y horizontal generoso */
+    font-size: 1.1rem;
+    font-weight: 600; /* Más peso */
+    border: none;
+    border-radius: 10px; /* Coincidir con inputs */
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    display: block; /* Ancho completo */
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 108, 228, 0.2); /* Sombra azul */
+}
+.submit-button:hover {
+    background-color: var(--kavak-blue-dark); /* Azul más oscuro */
+    box-shadow: 0 6px 20px rgba(0, 108, 228, 0.3);
+}
+.submit-button:active {
+     transform: scale(0.98);
+     box-shadow: 0 2px 10px rgba(0, 108, 228, 0.2);
+}
+.submit-button:disabled {
+    background-color: #cccccc; /* Gris deshabilitado */
+    color: #888888;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Loader (sin cambios, ya estaba bien) */
+.button-loader { display: inline-block; border: 2px solid rgba(255, 255, 255, 0.5); border-left-color: #fff; border-radius: 50%; width: 1.2em; height: 1.2em; animation: spin 1s linear infinite; margin-left: 0.5em; }
+.submit-button.loading .button-text { display: none; }
+.submit-button.loading .button-loader { display: inline-block; margin-left: 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.submit-note {
+    margin-top: 1.5rem;
+    font-size: 0.85rem; /* Más pequeño */
+    color: var(--kavak-text-secondary);
+    line-height: 1.5;
+}
+
+#footer {
+    /* --- Propiedades para fijarlo abajo --- */
+    
+    bottom: 0;           /* Pega el borde inferior del footer al borde inferior de la ventana */
+    left: 0;             /* Pega el borde izquierdo */
+    width: 100%;         /* Ocupa todo el ancho */
+    z-index: 990;        /* Orden de apilamiento (ej: debajo de header fijo si es 1000) */
+
+    /* --- Tus estilos visuales --- */
+    background-color: #242424;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 1.5rem 1rem; /* Define el padding interno */
+    text-align: center;
+    font-size: 0.9rem;
+
+    /* Es útil definir una altura explícita si puedes, para el cálculo del padding-bottom del body */
+    /* height: 75px; */ /* <-- EJEMPLO: Descomenta y ajusta si pones altura fija */
+
+    /* flex-shrink: 0; /* Ya no es necesario con position:fixed */
+}
+
+/* Estilos para el .container dentro del footer (si aplica) */
+#footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Ajustes responsivos finales */
+@media (max-width: 767px) {
+    .sell-car-form {
+        padding: 1.5rem; /* Menos padding */
+    }
+     .form-section legend {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+     }
+      .form-group input[type="text"],
+      .form-group input[type="number"],
+      .form-group input[type="email"],
+      .form-group input[type="tel"],
+      .form-group select,
+      .form-group textarea {
+        padding: 0.9rem 1rem; /* Ajustar padding en móvil */
+        font-size: 0.95rem;
+      }
+       .form-group select {
+          padding-right: 3rem; /* Mantener espacio para flecha */
+          background-position: right 1rem center;
+       }
+        .input-with-prefix input {
+            padding-left: 2.5rem;
+        }
+        .input-with-prefix span {
+            left: 1rem;
+        }
+
+      .submit-button {
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+      }
+      .photo-upload-area {
+          padding: 1.2rem;
+      }
+      .upload-content {
+        flex-direction: column; /* Apilar icono y texto en móvil */
+        gap: 0.5rem;
+      }
+      .upload-content .upload-icon { margin-bottom: 0.5rem;}
+}
