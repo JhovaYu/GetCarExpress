@@ -24,7 +24,7 @@ body {
     left: 0;
     width: 100%;
     padding: 0 25px; /* Padding horizontal. El vertical lo dará min-height y align-items */
-    background-color: rgba(0, 0, 0, 0.329);
+    background-color: rgba(0, 0, 0, 0.705);
     color: rgb(255, 255, 255); /* Color de texto por defecto para el header */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -174,7 +174,7 @@ body {
 }
 
 .simple-hero {
-    padding: 3rem 1.5rem;
+    padding: 2.4rem 1.5rem; /* Más padding vertical */
     margin-top: 75px; /* Ajustar a la altura de #header2 (ej: 75px) */
     background-color: #242424;
     color: white;

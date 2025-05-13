@@ -162,6 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 showLoading(true); // Mostrar loader en botón
 
                 console.log("Formulario válido. Recolectando datos...");
+                alert('Datos enviados con éxito');
                 const formData = new FormData(form);
 
                 // --- Importante: Añadir archivos al FormData ---
@@ -213,7 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 } finally {
                      showLoading(false); // Ocultar loader
                 }
-
+                
+                
 
             } else {
                 console.warn("El formulario contiene errores.");

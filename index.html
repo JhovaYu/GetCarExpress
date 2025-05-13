@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hubot+Sans:wdth@99.6&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="paginas/index/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -16,16 +17,43 @@
   </div>
 
   <div id="header">
-    GetCarXpress.com
+    <div id="header-top-flex">
+      GetCarXpress.com
+    </div>
+    <div id="header-bottom-flex">
+      <nav class="main-nav">
+            <ul class="main-nav__links">
+                <li><a href="paginas/compra/compra.html">Compra</a></li>
+                <li><a href="paginas/venta/venta.html">Venta</a></li>
+                <li><a href="paginas/user/user.html">Mi usuario</a></li>
+                <li><a href="paginas/quienes_somos/quienes_somos.html">¿Quiénes somos?</a></li>
+                <li class="user-nav-item">
+                    <a href="paginas/login/login.html" title="Iniciar Sesión / Mi Cuenta" class="user-icon-link">
+                        <i class="fas fa-user"></i>
+                        <span class="link-text-mobile">Cuenta</span> </a>
+                </li>
+            </ul>
+        </nav>
+        <a id="logo-container">
+            <img id="logo-img" src="src/logo_getCarMini.png" alt="Logo de GetCarXpress">
+        </a>
+    </div>
   </div>
 
   <div id="header2">
-    <div class="botones"> 
-      <button id="boton1"><a href="paginas/compra/compra.html">Compra</a></button>
-      <button id="boton2"><a href="paginas/venta/venta.html">Venta</a></button>
-      <button id="boton3"><a href="paginas/user/user.html">Mi usuario</a></button>
-      <button id="boton3"><a href="paginas/quienes_somos/quienes_somos.html">¿Quiénes somos?</a></button>
-    </div>
+    <nav class="main-nav">
+            <ul class="main-nav__links">
+                <li><a href="paginas/compra/compra.html">Compra</a></li>
+                <li><a href="paginas/venta/venta.html">Venta</a></li>
+                <li><a href="paginas/user/user.html">Mi usuario</a></li>
+                <li><a href="paginas/quienes_somos/quienes_somos.html">¿Quiénes somos?</a></li>
+                <li class="user-nav-item">
+                    <a href="paginas/login/login.html" title="Iniciar Sesión / Mi Cuenta" class="user-icon-link">
+                        <i class="fas fa-user"></i>
+                        <span class="link-text-mobile">Cuenta</span> </a>
+                </li>
+            </ul>
+        </nav>
   </div>
 
   <div class="spacer2"></div>

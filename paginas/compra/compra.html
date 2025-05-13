@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compra tu Auto - GetCarXpress</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="compra.css"> </head>
+    <link rel="stylesheet" href="compra.css">
+</head>
 <body>
 
     <div id="header2">
@@ -18,7 +19,8 @@
                 <li class="user-nav-item">
                     <a href="../login/login.html" title="Iniciar Sesión / Mi Cuenta" class="user-icon-link">
                         <i class="fas fa-user"></i>
-                        <span class="link-text-mobile">Cuenta</span> </a>
+                        <span class="link-text-mobile">Cuenta</span>
+                    </a>
                 </li>
             </ul>
         </nav>
@@ -27,7 +29,8 @@
         </a>
     </div>
 
-    <header class="hero simple-hero"> <div class="hero-content container">
+    <header class="hero simple-hero">
+        <div class="hero-content container">
             <h1>Encuentra tu Próximo Auto</h1>
             <p>Explora nuestro inventario de autos seminuevos de calidad.</p>
         </div>
@@ -55,31 +58,31 @@
                     <label><input type="checkbox" name="marca" value="honda"> Honda</label>
                     <label><input type="checkbox" name="marca" value="vw"> Volkswagen</label>
                     <label><input type="checkbox" name="marca" value="chevrolet"> Chevrolet</label>
-                    <a href="#" class="show-more">Ver más</a>
-                </div>
+                    </div>
             </div>
 
             <div class="filter-group">
                 <h4>Año</h4>
-                 <div class="year-range-placeholder">
+                <div class="year-range-placeholder">
                     <input type="number" min="2000" max="2025" placeholder="Desde" aria-label="Año desde">
                     <span>-</span>
                     <input type="number" min="2000" max="2025" placeholder="Hasta" aria-label="Año hasta">
                 </div>
             </div>
 
-             <div class="filter-group">
+            <div class="filter-group">
                 <h4>Kilometraje</h4>
-                 <div class="mileage-range-placeholder">
-                     <select aria-label="Kilometraje máximo">
-                         <option value="">Cualquiera</option>
-                         <option value="20000">Hasta 20,000 km</option>
-                         <option value="40000">Hasta 40,000 km</option>
-                         <option value="60000">Hasta 60,000 km</option>
-                         <option value="80000">Hasta 80,000 km</option>
-                         <option value="100000">Hasta 100,000 km</option>
-                     </select>
-                 </div>
+                <div class="mileage-range-placeholder">
+                    <select aria-label="Kilometraje máximo">
+                        <option value="">Cualquiera</option>
+                        <option value="20000">Hasta 20,000 km</option>
+                        <option value="40000">Hasta 40,000 km</option>
+                        <option value="60000">Hasta 60,000 km</option>
+                        <option value="80000">Hasta 80,000 km</option>
+                        <option value="100000">Hasta 100,000 km</option>
+                        <option value="150000">Hasta 150,000 km</option>
+                    </select>
+                </div>
             </div>
 
             <div class="filter-group">
@@ -92,16 +95,15 @@
                     </div>
             </div>
 
-             <button class="apply-filters-button">Aplicar Filtros</button>
-             <button class="clear-filters-button">Limpiar Filtros</button>
+            <button class="apply-filters-button">Aplicar Filtros</button>
+            <button class="clear-filters-button">Limpiar Filtros</button>
 
         </aside>
 
         <main class="main-content">
 
             <div class="sorting-bar">
-                <p><span id="results-count">128</span> autos encontrados</p>
-                <div class="sort-options">
+                <p><span id="results-count">19</span> autos encontrados</p> <div class="sort-options">
                     <label for="sort-select">Ordenar por:</label>
                     <select id="sort-select" name="sort">
                         <option value="relevant">Relevancia</option>
@@ -115,78 +117,295 @@
 
             <div class="car-grid">
 
-                <article class="car-card">
-                    <div class="car-image-container">
-                         <img src="../../src/toyota_cambry.jpg" alt="Toyota Camry 2021">
-                        </div>
+                <article class="car-card"
+                    data-price="450000" data-brand="toyota" data-year="2021" data-km="35000" data-type="sedan"
+                    data-transmission="automática" data-location="Tuxtla Gutiérrez, Chiapas" data-color="Gris" data-doors="4" data-fuel="gasolina"
+                    data-model="Camry" data-version="XLE" data-condition="seminuevo"
+                    data-description="Impecable Toyota Camry 2021 versión XLE. Único dueño, todos los servicios de agencia. Llantas nuevas."
+                    data-thumbnails="../../src/toyota_cambry.jpg,https://via.placeholder.com/100x75/DDDDDD/999999?text=Camry+Vista+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Camry+Vista+3">
+                    <div class="car-image-container"> <img src="../../src/toyota_cambry.jpg" alt="Toyota Camry 2021"> </div>
                     <div class="car-content">
                         <h3>Toyota Camry 2021</h3>
                         <p class="car-price">$450,000 <span class="financing">Enganche desde $90,000</span></p>
-                        <ul class="car-specs">
-                            <li><span class="spec-label">KM:</span> 35,000 km</li>
-                            <li><span class="spec-label">Trans:</span> Automática</li>
-                            </ul>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 35,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
                         <a href="#" class="details-button">Ver detalles</a>
                     </div>
                 </article>
 
-                <article class="car-card">
-                    <div class="car-image-container">
-                        <!-- esto es un comentario -->
-                        <img src="../../src/nissan_versa.jpeg" alt="Nissan Versa 2020">
-                        <!-- esto no hace nada, es solo para que se actulice esta cosa -->
-                    </div>
+                <article class="car-card"
+                    data-price="290000" data-brand="nissan" data-year="2020" data-km="42000" data-type="sedan"
+                    data-transmission="manual" data-location="Tuxtla Gutiérrez, Chiapas" data-color="Azul" data-doors="4" data-fuel="gasolina"
+                    data-model="Versa" data-version="Advance" data-condition="seminuevo"
+                    data-description="Nissan Versa 2020, transmisión manual. Excelente rendimiento de combustible. Bien cuidado."
+                    data-thumbnails="../../src/nissan_versa.jpeg,https://via.placeholder.com/100x75/DDDDDD/999999?text=Versa+Vista+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Versa+Vista+3">
+                    <div class="car-image-container"> <img src="../../src/nissan_versa.jpeg" alt="Nissan Versa 2020"> </div>
                     <div class="car-content">
                         <h3>Nissan Versa 2020</h3>
                         <p class="car-price">$290,000 <span class="financing">Enganche desde $56,000</span></p>
-                        <ul class="car-specs">
-                             <li><span class="spec-label">KM:</span> 42,000 km</li>
-                            <li><span class="spec-label">Trans:</span> Manual</li>
-                        </ul>
-                         <a href="#" class="details-button">Ver detalles</a>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 42,000 km</li> <li><span class="spec-label">Trans:</span> Manual</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
                     </div>
                 </article>
 
-                 <article class="car-card">
-                    <div class="car-image-container">
-                        <img src="../../src/vm_jetta.jpg" alt="Volkswagen Jetta 2019">
-                    </div>
+                <article class="car-card"
+                    data-price="310000" data-brand="vw" data-year="2019" data-km="55000" data-type="sedan"
+                    data-transmission="automática" data-location="Tuxtla Gutiérrez, Chiapas" data-color="Blanco" data-doors="4" data-fuel="gasolina"
+                    data-model="Jetta" data-version="Comfortline" data-condition="seminuevo"
+                    data-description="Volkswagen Jetta 2019 Comfortline. Potente y elegante. Perfecto estado mecánico."
+                    data-thumbnails="../../src/vm_jetta.jpg,https://via.placeholder.com/100x75/DDDDDD/999999?text=Jetta+Vista+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Jetta+Vista+3">
+                    <div class="car-image-container"> <img src="../../src/vm_jetta.jpg" alt="Volkswagen Jetta 2019"> </div>
                     <div class="car-content">
                         <h3>Volkswagen Jetta 2019</h3>
                         <p class="car-price">$310,000 <span class="financing">Enganche desde $62,000</span></p>
-                        <ul class="car-specs">
-                             <li><span class="spec-label">KM:</span> 55,000 km</li>
-                            <li><span class="spec-label">Trans:</span> Automática</li>
-                        </ul>
-                         <a href="#" class="details-button">Ver detalles</a>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 55,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
                     </div>
                 </article>
 
-                 <article class="car-card">
-                    <div class="car-image-container">
-                        <img src="../../src/crv.jpg" alt="Honda CR-V 2022">
-                    </div>
+                <article class="car-card"
+                    data-price="550000" data-brand="honda" data-year="2022" data-km="15000" data-type="suv"
+                    data-transmission="automática" data-location="Tuxtla Gutiérrez, Chiapas" data-color="Rojo" data-doors="5" data-fuel="gasolina"
+                    data-model="CR-V" data-version="Touring" data-condition="seminuevo"
+                    data-description="Espectacular Honda CR-V 2022 versión Touring. Como nueva, poco kilometraje. Full equipo."
+                    data-thumbnails="../../src/crv.jpg,https://via.placeholder.com/100x75/DDDDDD/999999?text=CRV+Vista+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=CRV+Vista+3">
+                    <div class="car-image-container"> <img src="../../src/crv.jpg" alt="Honda CR-V 2022"> </div>
                     <div class="car-content">
                         <h3>Honda CR-V 2022</h3>
                         <p class="car-price">$550,000 <span class="financing">Enganche desde $110,000</span></p>
-                        <ul class="car-specs">
-                             <li><span class="spec-label">KM:</span> 15,000 km</li>
-                            <li><span class="spec-label">Trans:</span> Automática</li>
-                        </ul>
-                         <a href="#" class="details-button">Ver detalles</a>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 15,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
                     </div>
                 </article>
 
-                 </div>
+                <article class="car-card"
+                    data-price="185000" data-brand="chevrolet" data-year="2018" data-km="75000" data-type="sedan"
+                    data-transmission="manual" data-location="Comitán, Chiapas" data-color="Plata" data-doors="4" data-fuel="gasolina"
+                    data-model="Aveo" data-version="LS" data-condition="usado"
+                    data-description="Chevrolet Aveo 2018, económico y confiable. Ideal para ciudad. Documentos en regla."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Chevrolet+Aveo+2018,https://via.placeholder.com/100x75/DDDDDD/999999?text=Aveo+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Aveo+3">
+                    <div class="car-image-container"> <img src="../../src/aveo2018.jpg" alt="Chevrolet Aveo 2018"> </div>
+                    <div class="car-content">
+                        <h3>Chevrolet Aveo 2018</h3>
+                        <p class="car-price">$185,000 <span class="financing">Enganche desde $37,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 75,000 km</li> <li><span class="spec-label">Trans:</span> Manual</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="330000" data-brand="nissan" data-year="2019" data-km="48000" data-type="suv"
+                    data-transmission="automática" data-location="Tapachula, Chiapas" data-color="Naranja" data-doors="5" data-fuel="gasolina"
+                    data-model="Kicks" data-version="Exclusive" data-condition="seminuevo"
+                    data-description="Nissan Kicks 2019 Exclusive, la más equipada. Cámara 360, asientos de piel."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Nissan+Kicks+2019,https://via.placeholder.com/100x75/DDDDDD/999999?text=Kicks+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Kicks+3">
+                    <div class="car-image-container"> <img src="../../src/kicks2019.jpg" alt="Nissan Kicks 2019"> </div>
+                    <div class="car-content">
+                        <h3>Nissan Kicks 2019</h3>
+                        <p class="car-price">$330,000 <span class="financing">Enganche desde $66,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 48,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="255000" data-brand="vw" data-year="2020" data-km="32000" data-type="hatchback"
+                    data-transmission="manual" data-location="San Cristóbal, Chiapas" data-color="Rojo" data-doors="5" data-fuel="gasolina"
+                    data-model="Polo" data-version="Comfortline" data-condition="seminuevo"
+                    data-description="VW Polo 2020 Comfortline. Ágil y divertido de manejar. Servicios al día."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=VW+Polo+2020,https://via.placeholder.com/100x75/DDDDDD/999999?text=Polo+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Polo+3">
+                    <div class="car-image-container"> <img src="../../src/polo2020.jpg" alt="VW Polo 2020"> </div>
+                    <div class="car-content">
+                        <h3>VW Polo 2020</h3>
+                        <p class="car-price">$255,000 <span class="financing">Enganche desde $51,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 32,000 km</li> <li><span class="spec-label">Trans:</span> Manual</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="395000" data-brand="toyota" data-year="2017" data-km="95000" data-type="pickup"
+                    data-transmission="manual" data-location="Tuxtla Gutiérrez, Chiapas" data-color="Blanco" data-doors="4" data-fuel="diesel"
+                    data-model="Hilux" data-version="SR" data-condition="usado"
+                    data-description="Toyota Hilux 2017 SR Diesel 4x2. Lista para el trabajo duro. Muy resistente."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Toyota+Hilux+2017,https://via.placeholder.com/100x75/DDDDDD/999999?text=Hilux+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Hilux+3">
+                    <div class="car-image-container"> <img src="../../src/hilux2017.jpg" alt="Toyota Hilux 2017"> </div>
+                    <div class="car-content">
+                        <h3>Toyota Hilux 2017</h3>
+                        <p class="car-price">$395,000 <span class="financing">Enganche desde $79,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 95,000 km</li> <li><span class="spec-label">Trans:</span> Manual</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="420000" data-brand="honda" data-year="2021" data-km="28000" data-type="suv"
+                    data-transmission="automática" data-location="Comitán, Chiapas" data-color="Azul Marino" data-doors="5" data-fuel="gasolina"
+                    data-model="HR-V" data-version="Touring" data-condition="seminuevo"
+                    data-description="Honda HR-V Touring 2021, la más equipada. Quemacocos, piel. Impecable."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Honda+HRV+2021,https://via.placeholder.com/100x75/DDDDDD/999999?text=HRV+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=HRV+3">
+                    <div class="car-image-container"> <img src="../../src/hrv2021.jpg" alt="Honda HR-V 2021"> </div>
+                    <div class="car-content">
+                        <h3>Honda HR-V 2021</h3>
+                        <p class="car-price">$420,000 <span class="financing">Enganche desde $84,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 28,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="275000" data-brand="chevrolet" data-year="2022" data-km="18000" data-type="sedan"
+                    data-transmission="automática" data-location="Tapachula, Chiapas" data-color="Negro" data-doors="4" data-fuel="gasolina"
+                    data-model="Onix" data-version="Premier" data-condition="seminuevo"
+                    data-description="Chevrolet Onix Premier 2022. Turbo, eficiente y bien equipado. Casi nuevo."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Chevrolet+Onix+2022,https://via.placeholder.com/100x75/DDDDDD/999999?text=Onix+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Onix+3">
+                    <div class="car-image-container"> <img src="../../src/onix2022.png" alt="Chevrolet Onix 2022"> </div>
+                    <div class="car-content">
+                        <h3>Chevrolet Onix 2022</h3>
+                        <p class="car-price">$275,000 <span class="financing">Enganche desde $55,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 18,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="195000" data-brand="nissan" data-year="2016" data-km="88000" data-type="hatchback"
+                    data-transmission="manual" data-location="San Cristóbal, Chiapas" data-color="Gris Oxford" data-doors="5" data-fuel="gasolina"
+                    data-model="March" data-version="SR" data-condition="usado"
+                    data-description="Nissan March SR 2016. Deportivo y económico. Ideal para la ciudad."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Nissan+March+2016,https://via.placeholder.com/100x75/DDDDDD/999999?text=March+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=March+3">
+                    <div class="car-image-container"> <img src="../../src/MARCH-2016-BLANCO-Mediano.jpg" alt="Nissan March 2016"> </div>
+                    <div class="car-content">
+                        <h3>Nissan March 2016</h3>
+                        <p class="car-price">$195,000 <span class="financing">Enganche desde $39,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 88,000 km</li> <li><span class="spec-label">Trans:</span> Manual</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="240000" data-brand="vw" data-year="2019" data-km="62000" data-type="sedan"
+                    data-transmission="automática" data-location="Tuxtla Gutiérrez, Chiapas" data-color="Plata" data-doors="4" data-fuel="gasolina"
+                    data-model="Vento" data-version="Highline" data-condition="seminuevo"
+                    data-description="VW Vento Highline 2019. Confortable y espacioso. Perfecto para familia."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=VW+Vento+2019,https://via.placeholder.com/100x75/DDDDDD/999999?text=Vento+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Vento+3">
+                    <div class="car-image-container"> <img src="../../src/vento2019.jpg" alt="VW Vento 2019"> </div>
+                    <div class="car-content">
+                        <h3>VW Vento 2019</h3>
+                        <p class="car-price">$240,000 <span class="financing">Enganche desde $48,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 62,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="480000" data-brand="toyota" data-year="2020" data-km="40000" data-type="suv"
+                    data-transmission="automática" data-location="Tapachula, Chiapas" data-color="Blanco Perlado" data-doors="5" data-fuel="hibrido"
+                    data-model="RAV4" data-version="Hybrid LE" data-condition="seminuevo"
+                    data-description="Toyota RAV4 Hybrid LE 2020. Eficiencia y tecnología. Excelente estado."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Toyota+RAV4+2020,https://via.placeholder.com/100x75/DDDDDD/999999?text=RAV4+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=RAV4+3">
+                    <div class="car-image-container"> <img src="../../src/rav42020.jpg" alt="Toyota RAV4 2020"> </div>
+                    <div class="car-content">
+                        <h3>Toyota RAV4 Hybrid 2020</h3>
+                        <p class="car-price">$480,000 <span class="financing">Enganche desde $96,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 40,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="350000" data-brand="honda" data-year="2018" data-km="58000" data-type="sedan"
+                    data-transmission="automática" data-location="Comitán, Chiapas" data-color="Negro" data-doors="4" data-fuel="gasolina"
+                    data-model="Civic" data-version="EX" data-condition="seminuevo"
+                    data-description="Honda Civic EX 2018. Deportivo y confiable. Quemacocos, rines de aluminio."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Honda+Civic+2018,https://via.placeholder.com/100x75/DDDDDD/999999?text=Civic+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Civic+3">
+                    <div class="car-image-container"> <img src="../../src/civic2019.jpg" alt="Honda Civic 2018"> </div>
+                    <div class="car-content">
+                        <h3>Honda Civic 2018</h3>
+                        <p class="car-price">$350,000 <span class="financing">Enganche desde $70,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 58,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="340000" data-brand="chevrolet" data-year="2019" data-km="70000" data-type="pickup"
+                    data-transmission="manual" data-location="San Cristóbal, Chiapas" data-color="Gris" data-doors="4" data-fuel="diesel"
+                    data-model="S10 Max" data-version="LS Doble Cabina" data-condition="usado"
+                    data-description="Chevrolet S10 Max Diesel 2019. Doble cabina, ideal para carga y aventura."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Chevrolet+S10+Max+2019,https://via.placeholder.com/100x75/DDDDDD/999999?text=S10Max+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=S10Max+3">
+                    <div class="car-image-container"> <img src="../../src/s10max2019.jpg" alt="Chevrolet S10 Max 2019"> </div>
+                    <div class="car-content">
+                        <h3>Chevrolet S10 Max 2019</h3>
+                        <p class="car-price">$340,000 <span class="financing">Enganche desde $68,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 70,000 km</li> <li><span class="spec-label">Trans:</span> Manual</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="460000" data-brand="nissan" data-year="2021" data-km="30000" data-type="pickup"
+                    data-transmission="automática" data-location="Tuxtla Gutiérrez, Chiapas" data-color="Roja" data-doors="4" data-fuel="gasolina"
+                    data-model="Frontier" data-version="PRO-4X" data-condition="seminuevo"
+                    data-description="Nissan Frontier PRO-4X 2021. Potente y equipada para off-road. Como nueva."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Nissan+Frontier+2021,https://via.placeholder.com/100x75/DDDDDD/999999?text=Frontier+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Frontier+3">
+                    <div class="car-image-container"> <img src="../../src/frontier2021.jpg" alt="Nissan Frontier 2021"> </div>
+                    <div class="car-content">
+                        <h3>Nissan Frontier PRO-4X 2021</h3>
+                        <p class="car-price">$460,000 <span class="financing">Enganche desde $92,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 30,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="495000" data-brand="vw" data-year="2022" data-km="22000" data-type="suv"
+                    data-transmission="automática" data-location="Tapachula, Chiapas" data-color="Azul" data-doors="5" data-fuel="gasolina"
+                    data-model="Taos" data-version="Comfortline" data-condition="seminuevo"
+                    data-description="VW Taos Comfortline 2022. Diseño moderno, gran espacio interior y tecnología."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=VW+Taos+2022,https://via.placeholder.com/100x75/DDDDDD/999999?text=Taos+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Taos+3">
+                    <div class="car-image-container"> <img src="../../src/taos2022.jpg" alt="VW Taos 2022"> </div>
+                    <div class="car-content">
+                        <h3>VW Taos 2022</h3>
+                        <p class="car-price">$495,000 <span class="financing">Enganche desde $99,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 22,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="320000" data-brand="toyota" data-year="2019" data-km="53000" data-type="sedan"
+                    data-transmission="automática" data-location="San Cristóbal, Chiapas" data-color="Gris Metálico" data-doors="4" data-fuel="gasolina"
+                    data-model="Corolla" data-version="SE" data-condition="seminuevo"
+                    data-description="Toyota Corolla SE 2019. Confiabilidad y buen manejo. Mantenimiento al día."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Toyota+Corolla+2019,https://via.placeholder.com/100x75/DDDDDD/999999?text=Corolla+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=Corolla+3">
+                    <div class="car-image-container"> <img src="../../src/corolla2019.jpg" alt="Toyota Corolla 2019"> </div>
+                    <div class="car-content">
+                        <h3>Toyota Corolla 2019</h3>
+                        <p class="car-price">$320,000 <span class="financing">Enganche desde $64,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 53,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+                <article class="car-card"
+                    data-price="280000" data-brand="honda" data-year="2020" data-km="45000" data-type="sedan"
+                    data-transmission="automática" data-location="Tuxtla Gutiérrez, Chiapas" data-color="Blanco" data-doors="4" data-fuel="gasolina"
+                    data-model="City" data-version="EX" data-condition="seminuevo"
+                    data-description="Honda City EX 2020. Espacioso por dentro, económico en combustible. Factura original."
+                    data-thumbnails="https://via.placeholder.com/300x225/EEEEEE/AAAAAA?text=Honda+City+2020,https://via.placeholder.com/100x75/DDDDDD/999999?text=City+2,https://via.placeholder.com/100x75/CCCCCC/888888?text=City+3">
+                    <div class="car-image-container"> <img src="../../src/hondacoity2020.webp" alt="Honda City 2020"> </div>
+                    <div class="car-content">
+                        <h3>Honda City 2020</h3>
+                        <p class="car-price">$280,000 <span class="financing">Enganche desde $56,000</span></p>
+                        <ul class="car-specs"> <li><span class="spec-label">KM:</span> 45,000 km</li> <li><span class="spec-label">Trans:</span> Automática</li> </ul>
+                        <a href="#" class="details-button">Ver detalles</a>
+                    </div>
+                </article>
+
+
+            </div>
 
             <nav class="pagination">
-                 <a href="#" class="page-link prev disabled">Anterior</a>
-                 <a href="#" class="page-link active">1</a>
-                 <a href="#" class="page-link">2</a>
-                 <a href="#" class="page-link">3</a>
-                 <span class="page-dots">...</span>
-                 <a href="#" class="page-link">10</a>
-                 <a href="#" class="page-link next">Siguiente</a>
             </nav>
 
         </main>
@@ -200,25 +419,24 @@
             <div class="modal-body">
                 <div class="modal-main-info">
                     <div class="modal-gallery">
-                        <img id="modalMainImage" src="../../src/toyota_cambry.jpg" alt="Imagen principal del auto" class="main-image">
+                        <img id="modalMainImage" src="https://via.placeholder.com/600x400/EEEEEE/AAAAAA?text=Imagen+Principal" alt="Imagen principal del auto" class="main-image">
                         <div id="modalThumbnails" class="thumbnails">
-                            <img src="../../src/tucson.jpg" alt="Vista miniatura 1">
-                            <img src="../../src/vento_wm.jpg" alt="Vista miniatura 2">
-                            <img src="../../src/white_wm.png" alt="Vista miniatura 3">
-                            <img src="../../src/polo_wm.jpg" alt="Vista miniatura 4">
+                            <img src="https://via.placeholder.com/100x75/EEEEEE/AAAAAA?text=Thumb+1" alt="Vista miniatura 1">
+                            <img src="https://via.placeholder.com/100x75/EEEEEE/AAAAAA?text=Thumb+2" alt="Vista miniatura 2">
                         </div>
                     </div>
                     <div class="modal-summary">
-                        <h2 id="modalTitle">Nissan Kicks Advance Aut 2020</h2>
-                        <p class="modal-price" id="modalPrice">$350,000 MXN</p>
-                        <p class="modal-location" id="modalLocation"><i class="fas fa-map-marker-alt"></i> Tuxtla Gutiérrez, Chiapas</p> <div class="modal-highlights">
+                        <h2 id="modalTitle">Título del Auto</h2>
+                        <p class="modal-price" id="modalPrice">$0 MXN</p>
+                        <p class="modal-location" id="modalLocation"><i class="fas fa-map-marker-alt"></i> Ubicación</p>
+                        <div class="modal-highlights">
                             <h4>Destacado</h4>
                             <ul>
-                                <li id="modalKm"><i class="fas fa-tachometer-alt"></i> 45,000 km</li>
-                                <li id="modalTransmision"><i class="fas fa-cogs"></i> Automática</li>
-                                <li id="modalColor"><i class="fas fa-palette"></i> Rojo</li>
-                                <li id="modalPuertas"><i class="fas fa-door-closed"></i> 5 Puertas</li>
-                                <li id="modalCombustible"><i class="fas fa-gas-pump"></i> Gasolina</li>
+                                <li id="modalKm"><i class="fas fa-tachometer-alt"></i> 0 km</li>
+                                <li id="modalTransmision"><i class="fas fa-cogs"></i> N/A</li>
+                                <li id="modalColor"><i class="fas fa-palette"></i> N/A</li>
+                                <li id="modalPuertas"><i class="fas fa-door-closed"></i> N/A</li>
+                                <li id="modalCombustible"><i class="fas fa-gas-pump"></i> N/A</li>
                             </ul>
                         </div>
 
@@ -228,7 +446,7 @@
                             <button class="contact-button">Simular Crédito</button>
                         </div>
 
-                         <button class="contact-button main-contact">Contactar al Vendedor</button>
+                        <button class="contact-button main-contact">Contactar al Vendedor</button>
                     </div>
                 </div>
 
@@ -236,10 +454,7 @@
                     <div class="modal-description">
                         <h4>Descripción</h4>
                         <p id="modalDescriptionText">
-                            Excelente Nissan Kicks versión Advance 2020. Transmisión automática, único dueño,
-                            factura original. Todos los servicios de agencia. Interiores bien cuidados,
-                            aire acondicionado funcionando al 100%. Llantas con más de media vida.
-                            ¡Listo para cualquier prueba!
+                            Descripción detallada del vehículo aparecerá aquí.
                         </p>
                     </div>
 
@@ -248,56 +463,39 @@
                         <div class="spec-category">
                             <h5>General</h5>
                             <ul id="specsGeneral">
-                                <li>Año: 2020</li>
-                                <li>Marca: Nissan</li>
-                                <li>Modelo: Kicks</li>
-                                <li>Versión: Advance Aut</li>
-                                <li>Condición: Usado</li>
+                                <li>Año: N/A</li>
+                                <li>Marca: N/A</li>
+                                <li>Modelo: N/A</li>
+                                <li>Versión: N/A</li>
+                                <li>Condición: N/A</li>
                             </ul>
                         </div>
-                         <div class="spec-category">
+                        <div class="spec-category">
                             <h5>Motor</h5>
-                            <ul id="specsMotor">
-                                <li>Cilindros: 4</li>
-                                <li>Cilindrada: 1.6 L</li>
-                                <li>Potencia: 118 hp</li>
-                                <li>Torque: 110 lb-pie</li>
-                            </ul>
+                            <ul id="specsMotor"> </ul>
                         </div>
-                         <div class="spec-category">
+                        <div class="spec-category">
                             <h5>Equipamiento</h5>
-                            <ul id="specsEquipamiento">
-                                <li>Aire acondicionado</li>
-                                <li>Vidrios eléctricos</li>
-                                <li>Pantalla táctil</li>
-                                <li>Controles al volante</li>
-                                <li>Cámara de reversa</li>
-                                <li>Rines de aluminio</li>
-                            </ul>
+                            <ul id="specsEquipamiento"> </ul>
                         </div>
-                         <div class="spec-category">
+                        <div class="spec-category">
                             <h5>Seguridad</h5>
-                            <ul id="specsSeguridad">
-                                <li>Frenos ABS</li>
-                                <li>Bolsas de aire frontales</li>
-                                <li>Control de estabilidad (VDC)</li>
-                                <li>Asistente de arranque en pendientes</li>
-                            </ul>
+                            <ul id="specsSeguridad"> </ul>
                         </div>
-                        </div>
+                    </div>
                 </div>
-                </div>
+            </div>
         </div>
     </div>
+
     <footer>
         <div class="container">
-             <p>© <span id="current-year"></span> GetCarXpress. Todos los derechos reservados.</p>
+            <p>© <span id="current-year">2025</span> GetCarXpress. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="compra.js"></script>
     <script>
-        // Script del año (ya existente)
         const currentYearElement = document.getElementById('current-year');
         if (currentYearElement) {
             currentYearElement.textContent = new Date().getFullYear();

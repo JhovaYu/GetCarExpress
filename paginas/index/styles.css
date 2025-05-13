@@ -47,21 +47,28 @@ body, html {
   
   
   #header {
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    padding: none;
+    display: none; /* Inicialmente oculta */
+    transition: all 0.6s ease;
+    opacity: 0;
+    transform: translateY(-100%); /* Inicialmente fuera de la vista */
+    z-index: 1;
+  }
+  
+  #header-top-flex {
+    padding: 10px;
     background-color: rgba(36, 36, 36, 0.822); /* Fondo blanco semi-transparente */
     color: rgb(255, 255, 255);  /* Cambiar el color del texto a negro */
     font-weight: bold; /* Poner el texto en negritas */
     text-align: center;
     font-size: 3rem;
-    display: none; /* Inicialmente oculta */
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(-100%); /* Inicialmente fuera de la vista */
-    z-index: 1;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    flex-direction: column; /* Para centrar el título y el párrafo verticalmente entre sí si es necesario */
     font-family: "Hubot Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -70,29 +77,133 @@ body, html {
     "wdth" 99.6;
     
     /* Efecto de desenfoque blanco en el fondo */
-    backdrop-filter: blur(20px);  /* Aplica un desenfoque al fondo */
-    -webkit-backdrop-filter: blur(20px);  /* Para soporte en Safari */
+    backdrop-filter: blur(40px);  /* Aplica un desenfoque al fondo */
+    -webkit-backdrop-filter: blur(40px);  /* Para soporte en Safari */
   }
-  
-  #header2 {
-    position: fixed;
-    bottom: 0; /* Coloca el header2 en la parte inferior */
-    left: 0;
-    width: 100%;
+
+  #header-bottom-flex {
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.329); /* Fondo blanco semi-transparente */
+    background-color: rgba(0, 0, 0, 0.77); /* Fondo blanco semi-transparente */
     color: rgb(255, 255, 255); /* Cambiar el color del texto a blanco */
     font-weight: bold; /* Poner el texto en negritas */
     text-align: center;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-    opacity: 1;
-    z-index: 1;
-    /* Efecto de desenfoque blanco en el fondo */
     backdrop-filter: blur(12px); /* Aplica un desenfoque al fondo */
     -webkit-backdrop-filter: blur(12px); /* Para soporte en Safari */
-    z-index: 1000;    
+    display: flex;
+    justify-content: center; /* Centra la navegación horizontalmente */
+    align-items: center;
   }
+
+#header2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 25px; /* Padding horizontal. El vertical lo dará min-height y align-items */
+    background-color: rgba(0, 0, 0, 0.705);
+    color: rgb(255, 255, 255); /* Color de texto por defecto para el header */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+
+    display: flex;
+    align-items: center; /* Centra verticalmente nav y logo-container */
+    justify-content: center; /* Centra el nav.main-nav por defecto */
+    min-height: 95px; /* Altura del navbar, ajusta según tu logo y tamaño de fuente */
+    /* Las propiedades de font-weight y font-size aquí son generales,
+       los enlaces tendrán las suyas propias */
+}
+
+/* Contenedor principal de la navegación */
+.main-nav {
+    /* Este elemento será centrado por justify-content: center en #header2 */
+}
+
+.main-nav__links {
+    display: flex;
+    align-items: center;
+    list-style: none; /* Quitar viñetas de la lista */
+    padding: 0;
+    margin: 0;
+    gap: 9px; /* Espacio mínimo entre items, el padding del 'a' hará el resto */
+}
+
+.main-nav__links li {
+    /* No se necesita mucho estilo aquí, el 'a' es el importante */
+}
+
+.main-nav__links li a {
+    display: inline-block; /* Permite padding y comportamiento de bloque */
+    padding: 12px 18px; /* Padding para área clickeable y espaciado visual */
+    color: rgb(255, 255, 255); /* Color del texto del enlace */
+    text-decoration: none;
+    font-family: "Hubot Sans", sans-serif; /* Manteniendo tu fuente */
+    font-size: 1.2rem; /* Ajustar tamaño (ej: 15px-16px) */
+    font-weight: 500; /* Un poco más de peso que el normal */
+    text-transform: uppercase; /* Estilo común para este tipo de nav */
+    position: relative; /* Para el pseudo-elemento de la línea inferior */
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px; /* Ligero espaciado entre letras */
+    transform: translateX(-25px);
+}
+
+/* Efecto de línea inferior al pasar el ratón (Hover) */
+.main-nav__links li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Grosor de la línea */
+    background-color: rgb(255, 255, 255); /* Color de la línea */
+    left: 0;
+    bottom: 5px; /* Distancia de la línea al texto, ajusta con el padding del 'a' */
+    transform: scaleX(0); /* Inicialmente invisible (escala 0) */
+    transform-origin: center; /* La animación de la línea empieza/termina en el centro */
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1); /* Transición suave */
+}
+
+.main-nav__links li a:hover {
+    color: #f0f0f0; /* Color de texto ligeramente diferente al pasar el ratón */
+}
+
+.main-nav__links li a:hover::after {
+    transform: scaleX(1); /* Línea se expande al 100% */
+}
+
+/* Estilo específico para el enlace del ícono de usuario */
+.main-nav__links li a.user-icon-link {
+    padding: 12px 15px; /* Ajustar padding si es solo un ícono */
+}
+
+.main-nav__links li a.user-icon-link i.fa-user {
+    font-size: 1.2rem; /* Tamaño del ícono */
+    line-height: 1; /* Para mejor alineación vertical */
+}
+
+/* Ocultar texto "Cuenta" en pantallas grandes, mostrarlo en móviles */
+.main-nav__links li a.user-icon-link .link-text-mobile {
+    display: none; /* Oculto por defecto */
+    margin-left: 8px; /* Espacio entre ícono y texto */
+    font-size: 0.85rem; /* Más pequeño */
+}
+
+
+/* Contenedor del logo (mantiene su posición absoluta) */
+#logo-container {
+    position: absolute;
+    right: 25px; /* Distancia desde el borde derecho de #header2 */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+#logo-img {
+    height: 50px; /* Ajusta según la altura de tu navbar y logo */
+    width: auto;
+    max-width: 150px;
+    display: block;
+}
   
   
 /* Contenido inicial oculto */
@@ -198,6 +309,7 @@ body, html {
     font-style: normal;
     font-variation-settings:
     "wdth" 99.6;
+    z-index: 1003; 
 }
 
 /* Posiciona el enlace para que cubra todo el botón */

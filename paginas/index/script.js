@@ -6,7 +6,6 @@ window.addEventListener('scroll', function() {
   // Control de visibilidad y animaciones
   if (window.scrollY > 50) {
     // Mover el título hacia arriba y hacerlo invisible
-    title.style.position = 'fixed';
     title.style.top = '20px';
     title.style.left = '50%';
     title.style.transform = 'translateX(-50%)';
@@ -17,13 +16,11 @@ window.addEventListener('scroll', function() {
     header.style.display = 'block'; // Aseguramos que el header se muestre
     header.style.opacity = '1'; // Hacerlo visible
     header.style.transform = 'translateY(0)'; // Deslizar desde arriba
-    header2.style.transform = 'translateY(-1000%)';
-    header2.style.padding = '8px';
+    header2.style.transform = 'translateY(108%)';
 
     // Animar el contenido
     content.classList.add('show');
   } else {
-    header2.style.display = 'block'; // Aseguramos que el header se muestre
     header2.style.opacity = '1'; // Hacerlo visible
     header2.style.transform = 'translateY(0)';
     // Restaurar el título a su estado original
@@ -36,7 +33,6 @@ window.addEventListener('scroll', function() {
     // Ocultar el header (deslizar hacia arriba)
     header.style.opacity = '0'; // Hacerlo invisible
     header.style.transform = 'translateY(-100%)'; // Deslizar fuera de la vista
-    header2.style.padding = '20px';
     
     // Ocultar el contenido
     content.classList.remove('show');

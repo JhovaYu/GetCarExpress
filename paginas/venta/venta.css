@@ -40,7 +40,7 @@ body {
     left: 0;
     width: 100%;
     padding: 0 25px; /* Padding horizontal. El vertical lo dará min-height y align-items */
-    background-color: rgba(0, 0, 0, 0.329);
+    background-color: rgba(0, 0, 0, 0.705);
     color: rgb(255, 255, 255); /* Color de texto por defecto para el header */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -218,20 +218,17 @@ body {
     background-color: #242424; /* Mantenido color oscuro */
     color: white;
     text-align: center;
-    padding: 5rem 1.5rem; /* Más padding vertical */
+    padding: 2rem 1.5rem; /* Más padding vertical */
 }
 
 .hero-content h1 {
-    font-size: 2.8rem; /* Tamaño ajustado */
-    margin-bottom: 1rem;
-    font-weight: 600;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    max-width: 700px; /* Ancho máximo del párrafo */
-    margin: 0 auto;
-    opacity: 0.9; /* Ligera transparencia */
+    font-size: 1.1rem;
+    opacity: 0.9;
 }
 
 /* Contenedor Principal - Centrado y más estrecho */
@@ -258,7 +255,7 @@ body {
     gap: 1rem; /* Espacio entre elementos */
     text-align: center;
     font-size: 1.5rem; /* Tamaño de fuente grande */
-    margin-top: 150px;
+    margin-top: 75px;
 }
 
 @media (min-width: 768px) {
