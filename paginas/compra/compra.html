@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compra tu Auto - GetCarXpress</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="compra.css"> </head>
 <body>
 
     <div id="header2">
-        <div class="botones"> 
-          <button id="boton1"><a href="/paginas/compra/compra.html">Compra</a></button>
-          <button id="boton2"><a href="/paginas/venta/venta.html">Venta</a></button>
-          <button id="boton3"><a href="/paginas/user/user.html">Mi usuario</a></button>
-          <button id="boton3"><a href="/paginas/quienes_somos/quienes_somos.html">¿Quiénes somos?</a></button>
-          <a href="/paginas/index/index.html"><img id="logo" src="/src/logo_getCarMini.png" alt="Logo de GetCarXpress" class="logo"></a>
-        </div>
+        <nav class="main-nav">
+            <ul class="main-nav__links">
+                <li><a href="../compra/compra.html">Compra</a></li>
+                <li><a href="../venta/venta.html">Venta</a></li>
+                <li><a href="../user/user.html">Mi usuario</a></li>
+                <li><a href="../quienes_somos/quienes_somos.html">¿Quiénes somos?</a></li>
+                <li class="user-nav-item">
+                    <a href="../login/login.html" title="Iniciar Sesión / Mi Cuenta" class="user-icon-link">
+                        <i class="fas fa-user"></i>
+                        <span class="link-text-mobile">Cuenta</span> </a>
+                </li>
+            </ul>
+        </nav>
+        <a href="../../index.html" id="logo-container">
+            <img id="logo-img" src="../../src/logo_getCarMini.png" alt="Logo de GetCarXpress">
+        </a>
     </div>
 
     <header class="hero simple-hero"> <div class="hero-content container">
@@ -107,7 +117,7 @@
 
                 <article class="car-card">
                     <div class="car-image-container">
-                         <img src="https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Auto+Imagen+1" alt="Toyota Camry 2021">
+                         <img src="../../src/toyota_cambry.jpg" alt="Toyota Camry 2021">
                         </div>
                     <div class="car-content">
                         <h3>Toyota Camry 2021</h3>
@@ -122,11 +132,13 @@
 
                 <article class="car-card">
                     <div class="car-image-container">
-                        <img src="https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Auto+Imagen+2" alt="Nissan Versa 2020">
+                        <!-- esto es un comentario -->
+                        <img src="../../src/nissan_versa.jpeg" alt="Nissan Versa 2020">
+                        <!-- esto no hace nada, es solo para que se actulice esta cosa -->
                     </div>
                     <div class="car-content">
                         <h3>Nissan Versa 2020</h3>
-                        <p class="car-price">$280,000 <span class="financing">Enganche desde $56,000</span></p>
+                        <p class="car-price">$290,000 <span class="financing">Enganche desde $56,000</span></p>
                         <ul class="car-specs">
                              <li><span class="spec-label">KM:</span> 42,000 km</li>
                             <li><span class="spec-label">Trans:</span> Manual</li>
@@ -137,7 +149,7 @@
 
                  <article class="car-card">
                     <div class="car-image-container">
-                        <img src="https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Auto+Imagen+3" alt="Volkswagen Jetta 2019">
+                        <img src="../../src/vm_jetta.jpg" alt="Volkswagen Jetta 2019">
                     </div>
                     <div class="car-content">
                         <h3>Volkswagen Jetta 2019</h3>
@@ -152,7 +164,7 @@
 
                  <article class="car-card">
                     <div class="car-image-container">
-                        <img src="https://via.placeholder.com/300x200/CCCCCC/FFFFFF?text=Auto+Imagen+4" alt="Honda CR-V 2022">
+                        <img src="../../src/crv.jpg" alt="Honda CR-V 2022">
                     </div>
                     <div class="car-content">
                         <h3>Honda CR-V 2022</h3>
@@ -188,12 +200,12 @@
             <div class="modal-body">
                 <div class="modal-main-info">
                     <div class="modal-gallery">
-                        <img id="modalMainImage" src="https://via.placeholder.com/600x400/EEEEEE/AAAAAA?text=Imagen+Principal" alt="Imagen principal del auto" class="main-image">
+                        <img id="modalMainImage" src="../../src/toyota_cambry.jpg" alt="Imagen principal del auto" class="main-image">
                         <div id="modalThumbnails" class="thumbnails">
-                            <img src="https://via.placeholder.com/100x75/EEEEEE/AAAAAA?text=Thumb+1" alt="Vista miniatura 1">
-                            <img src="https://via.placeholder.com/100x75/EEEEEE/AAAAAA?text=Thumb+2" alt="Vista miniatura 2">
-                            <img src="https://via.placeholder.com/100x75/EEEEEE/AAAAAA?text=Thumb+3" alt="Vista miniatura 3">
-                            <img src="https://via.placeholder.com/100x75/EEEEEE/AAAAAA?text=Thumb+4" alt="Vista miniatura 4">
+                            <img src="../../src/tucson.jpg" alt="Vista miniatura 1">
+                            <img src="../../src/vento_wm.jpg" alt="Vista miniatura 2">
+                            <img src="../../src/white_wm.png" alt="Vista miniatura 3">
+                            <img src="../../src/polo_wm.jpg" alt="Vista miniatura 4">
                         </div>
                     </div>
                     <div class="modal-summary">
