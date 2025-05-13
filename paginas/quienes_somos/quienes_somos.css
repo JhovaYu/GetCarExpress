@@ -1,4 +1,11 @@
 /* Estilos Generales */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin: 0;
@@ -9,84 +16,179 @@ body {
     font-size: 16px; /* Base font size */
 }
 
+/* Asegúrate de tener FontAwesome linkeado en tu HTML principal para el icono de usuario */
+
 #header2 {
-    position: fixed; /* <-- MANTENER ESTE */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
+    padding: 0 25px; /* Padding horizontal. El vertical lo dará min-height y align-items */
     background-color: rgba(0, 0, 0, 0.329);
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    /* text-align: center; /* No es necesario si usas flex para centrar .botones */
+    color: rgb(255, 255, 255); /* Color de texto por defecto para el header */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    transition: all 0.3s ease; /* La transición sigue aquí */
-    /* opacity: 1; /* Valor por defecto, opcional */
-    z-index: 1000; /* Mantener z-index alto */
-    /* position: relative; /* <-- ¡ELIMINA ESTA LÍNEA! */
-    min-height: 90px; /* Mantener si es necesario */
-    display: flex; /* Mantener para layout interno */
-    align-items: center; /* Mantener para layout interno */
-    justify-content: center; /* Mantener para layout interno */
+    z-index: 1000;
+
+    display: flex;
+    align-items: center; /* Centra verticalmente nav y logo-container */
+    justify-content: center; /* Centra el nav.main-nav por defecto */
+    min-height: 75px; /* Altura del navbar, ajusta según tu logo y tamaño de fuente */
+    /* Las propiedades de font-weight y font-size aquí son generales,
+       los enlaces tendrán las suyas propias */
 }
 
-#logo {
-    position: absolute; /* Correcto, relativo al #header2 fijo */
-    right: 100px; /* Ajusta según necesites */
+/* Contenedor principal de la navegación */
+.main-nav {
+    /* Este elemento será centrado por justify-content: center en #header2 */
+}
+
+.main-nav__links {
+    display: flex;
+    align-items: center;
+    list-style: none; /* Quitar viñetas de la lista */
+    padding: 0;
+    margin: 0;
+    gap: 5px; /* Espacio mínimo entre items, el padding del 'a' hará el resto */
+}
+
+.main-nav__links li {
+    /* No se necesita mucho estilo aquí, el 'a' es el importante */
+}
+
+.main-nav__links li a {
+    display: inline-block; /* Permite padding y comportamiento de bloque */
+    padding: 12px 18px; /* Padding para área clickeable y espaciado visual */
+    color: rgb(255, 255, 255); /* Color del texto del enlace */
+    text-decoration: none;
+    font-family: "Hubot Sans", sans-serif; /* Manteniendo tu fuente */
+    font-size: 0.95rem; /* Ajustar tamaño (ej: 15px-16px) */
+    font-weight: 500; /* Un poco más de peso que el normal */
+    text-transform: uppercase; /* Estilo común para este tipo de nav */
+    position: relative; /* Para el pseudo-elemento de la línea inferior */
+    transition: color 0.3s ease;
+    letter-spacing: 0.5px; /* Ligero espaciado entre letras */
+}
+
+/* Efecto de línea inferior al pasar el ratón (Hover) */
+.main-nav__links li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Grosor de la línea */
+    background-color: rgb(255, 255, 255); /* Color de la línea */
+    left: 0;
+    bottom: 5px; /* Distancia de la línea al texto, ajusta con el padding del 'a' */
+    transform: scaleX(0); /* Inicialmente invisible (escala 0) */
+    transform-origin: center; /* La animación de la línea empieza/termina en el centro */
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1); /* Transición suave */
+}
+
+.main-nav__links li a:hover {
+    color: #f0f0f0; /* Color de texto ligeramente diferente al pasar el ratón */
+}
+
+.main-nav__links li a:hover::after {
+    transform: scaleX(1); /* Línea se expande al 100% */
+}
+
+/* Estilo específico para el enlace del ícono de usuario */
+.main-nav__links li a.user-icon-link {
+    padding: 12px 15px; /* Ajustar padding si es solo un ícono */
+}
+
+.main-nav__links li a.user-icon-link i.fa-user {
+    font-size: 1.2rem; /* Tamaño del ícono */
+    line-height: 1; /* Para mejor alineación vertical */
+}
+
+/* Ocultar texto "Cuenta" en pantallas grandes, mostrarlo en móviles */
+.main-nav__links li a.user-icon-link .link-text-mobile {
+    display: none; /* Oculto por defecto */
+    margin-left: 8px; /* Espacio entre ícono y texto */
+    font-size: 0.85rem; /* Más pequeño */
+}
+
+
+/* Contenedor del logo (mantiene su posición absoluta) */
+#logo-container {
+    position: absolute;
+    right: 25px; /* Distancia desde el borde derecho de #header2 */
     top: 50%;
     transform: translateY(-50%);
-    height: 75px;
-    width: auto;
-    max-width: 150px;
+    display: flex;
+    align-items: center;
 }
 
-/* Estilo para los botones en general */
-.botones button {
-    position: relative; /* Para que el enlace absoluto se posicione respecto al botón */
-    background-color: #ffffff;
-    border: none;
-    padding: 0; /* Elimina el padding si lo hay, para evitar desplazamientos */
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 23px;
-    overflow: hidden;
-    transition: background-color 0.4s ease, color 0.4s ease;
-    width: 200px;
-    height: 50px;
-    font-family: "Hubot Sans", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 400;
-      font-style: normal;
-      font-variation-settings:
-      "wdth" 99.6;
-  }
-  
-  /* Posiciona el enlace para que cubra todo el botón */
-  .botones button a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    display: flex; /* Usa flex para centrar el contenido */
-    align-items: center; /* Centrado vertical */
-    justify-content: center; /* Centrado horizontal */
-    transition: transform 0.3s ease;
-  }
-  
-  /* Hover sobre el botón */
-  .botones button:hover {
-    background-color: rgba(253, 224, 97, 0.856);
-  }
-  
-  .botones button:hover a {
-    color: rgb(0, 0, 0);
-    transform: scale(1.4); 
-  }
+#logo-img {
+    height: 50px; /* Ajusta según la altura de tu navbar y logo */
+    width: auto;
+    max-width: 150px;
+    display: block;
+}
+
+
+/* Media Query para mostrar texto junto al ícono en móviles (ejemplo) */
+@media (max-width: 768px) {
+    .main-nav__links {
+        gap: 0; /* Menos gap si los items son más anchos */
+    }
+    .main-nav__links li a {
+        padding: 10px 12px; /* Menos padding */
+        font-size: 0.85rem; /* Texto más pequeño */
+    }
+    .main-nav__links li a.user-icon-link .link-text-mobile {
+        /* display: inline; /* Mostrar texto en móviles */
+        /* Si se muestra el texto, podrías querer ocultar otros links o hacer el nav scrolleable */
+    }
+    /* Ejemplo: si el espacio es muy limitado en móvil, podrías ocultar algunos textos */
+    /*
+    .main-nav__links li:not(.user-nav-item) a {
+        font-size: 0; // Oculta el texto
+    }
+    .main-nav__links li:not(.user-nav-item) a::before {
+        content: attr(href); // Intenta mostrar el href, pero es mejor usar iconos
+        font-size: 0.85rem; // Restaura el tamaño
+    }
+    */
+
+    #logo-container {
+        right: 15px; /* Menos espacio para el logo */
+    }
+    #logo-img {
+        height: 40px; /* Logo más pequeño */
+    }
+    #header2 {
+        min-height: 60px; /* Header más pequeño */
+        padding: 0 15px;
+    }
+}
+
+
+/* Estilos para .simple-hero y .container (los que ya tenías) */
+/* Asegúrate que el margin-top de .simple-hero coincida con la altura de #header2 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.simple-hero {
+    padding: 3rem 1.5rem;
+    margin-top: 75px; /* Ajustar a la altura de #header2 (ej: 75px) */
+    background-color: #242424;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.simple-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+.simple-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
 
 /* Contenedor principal para centrar contenido */
 .container {
